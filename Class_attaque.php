@@ -1,9 +1,15 @@
 <?php
 Class Attaque{
-  private $_nomAttaque;
-  private $_ptPower;
+  public $_nomAttaque;
+  public $_ptPower;
+  public $_powerAttaque;
 
-  public function degats(){
+  public function degats(ptVie){
+    if (ptVie > ($this->_powerAttaque)){
+      ptVie=ptVie-($this->_powerAttaque);
+    } else {
+      echo "Vous êtes mort !!!";
+    }
 
   }
 }

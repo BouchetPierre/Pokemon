@@ -28,24 +28,30 @@
 
   };
 
-/*--------affichage des dresseurs sur la la page----------*/
+/*--------affichage des dresseurs sur la la page et du choix des pekemons----------*/
   $affichage= $dresseur->query('SELECT name FROM dresseur ORDER BY id_dresseur DESC LIMIT 2');
 
   while ($donnee = $affichage->fetch())
   {
     echo "<strong>".$donnee['name']."</strong>"."</br>";
     $lsPok= $dresseur->query('SELECT name, url_image_d1 FROM pokemonDesk WHERE evol = "1" ORDER BY id_pokemon');
-
-    while ($listePok = $lsPok->fetch())
-    {
-      echo $listePok ['name']."<img src=".$listePok ['url_image_d1']." alt= 'blabla'></br>";
-      echo "</br>";
+    ?>
+      <form method="post" action="main_Pok.php">
+        <?php    while ($listePok = $lsPok->fetch())
+            {
+              echo "<input type='checkbox' name=".$listePok ['name']." value=''/><label for='moins15'>".$listePok ['name']."<img src=".$listePok ['url_image_d1']." alt= 'blabla'></label><br />";
+              echo "</br>";
+            }
+            $lsPok->closeCursor();
     }
-    $lsPok->closeCursor();
-  }
+      ?>
+      <input type="submit" value="Envoyer" />
+      </form>
+  <?php
+
   $affichage->closeCursor();
 
-/*--------affichage des Pokemons sur la la page pour le choix----------*/
+
 
 
 
