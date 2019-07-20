@@ -11,14 +11,15 @@ text-align: center;
 .affiche{
   border-style: double;
   margin: 10%;
+  margin: 10%;
 }
 
 .container{
     width:400px;
-    margin:0 auto;
-    margin-top:10%;
+    margin: 5%;
+    margin-top:5%;
 }
-/* Bordered form */
+/* Bordure form */
 form {
     width:100%;
     padding: 30px;
@@ -43,7 +44,7 @@ input[type=text], input[type=password] {
     box-sizing: border-box;
 }
 
-/* Set a style for all buttons */
+/* DOnne un style a tous les boutons */
 input[type=submit] {
     background-color: #B0C4DE;
     color: white;

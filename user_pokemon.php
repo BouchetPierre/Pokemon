@@ -13,7 +13,7 @@
 <?php
   /*------connection base de donnees-------*/
   try {
-  $dresseur= new PDO('mysql:host=localhost;dbname=jeu_pokemon;charset=utf8', 'root', 'ADRAR1112', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+  $dresseur= new PDO('mysql:host=localhost;dbname=jeu_pokemon;charset=utf8', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
   }
   catch (Exception $e)
   {
@@ -28,7 +28,7 @@
 
   };
 
-/*--------affichage des dresseurs sur la la page et du choix des pekemons----------*/
+/*--------affichage des dresseurs sur la la page et du choix des pokemons----------*/
   $affichage= $dresseur->query('SELECT name FROM dresseur ORDER BY id_dresseur DESC LIMIT 2');
 
   while ($donnee = $affichage->fetch())
