@@ -1,18 +1,18 @@
 <?php
 session_start();
-    if(isset($_POST['name']) && isset($_POST['mdp']))
+    if(isset($_POST['name_d1']) && isset($_POST['mdp_d1']))
     {
         // connexion à la base de données
         $db_username = 'root';
-        $db_password = '';
+        $db_password = 'ADRAR1112';
         $db_name     = 'jeu_pokemon';
         $db_host     = 'localhost';
         $db = mysqli_connect($db_host, $db_username, $db_password,$db_name)
                or die('could not connect to database');
 
 
-        $username = mysqli_real_escape_string($db,htmlentities($_POST['name']));
-        $password = mysqli_real_escape_string($db,htmlentities($_POST['mdp']));
+        $username = mysqli_real_escape_string($db,htmlentities($_POST['name_d1']));
+        $password = mysqli_real_escape_string($db,htmlentities($_POST['mdp_d1']));
 
         if($username !== "" && $password !== "")
         {
@@ -24,17 +24,17 @@ session_start();
             $count = $reponse['count(*)'];
             if($count!=0) // si name et mdp corrects
             {
-               $_SESSION['name'] = $username;
-               header('Location: choix_pokemon.php');
+               $_SESSION['name_d1'] = $username;
+               header('Location: choix_pokemon_d1.php');
             }
             else
             {
-            header('Location: error.html'); //  name ou mdp incorrect
+            header('Location: error_d1.html'); //  name ou mdp incorrect
             }
         }
 
     }else{
-       header('Location: login.php');
+       header('Location: login_d1.php');
     }
     mysqli_close($db); // fermer la connexion
 ?>

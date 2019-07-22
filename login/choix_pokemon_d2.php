@@ -12,28 +12,29 @@
         <?php
   /*------connection base de donnees-------*/
           try {
-          $dresseur= new PDO('mysql:host=localhost;dbname=jeu_pokemon;charset=utf8', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+          $dresseur= new PDO('mysql:host=localhost;dbname=jeu_pokemon;charset=utf8', 'root', 'ADRAR1112', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
           }
           catch (Exception $e)
           {
           die('Erreur : '.$e->getMessage());
           }
 
-        /*--------affichage des dresseurs sur la la page et du choix des pokemons----------*/
+        /*--------affichage du dresseur 2 sur  la page et du choix des pokemons----------*/
         $affichage= $dresseur->query('SELECT name FROM dresseur ORDER BY id_dresseur DESC LIMIT 1');
 
         while ($donnee = $affichage->fetch())
         {
         echo "<strong>".$donnee['name']."</strong>"."</br>";
-        $lsPok= $dresseur->query('SELECT name, url_image_d1 FROM pokemonDesk WHERE evol = "1" ORDER BY id_pokemon');
+        $lsPok_d2= $dresseur->query('SELECT name, url_image_d2 FROM pokemonDesk WHERE evol = "1" ORDER BY id_pokemon');
         ?>
         <form method="post" action="../main_Pok.php">
-            <?php    while ($listePok = $lsPok->fetch())
+            <?php
+            while ($listePok_d2 = $lsPok_d2->fetch())
             {
-              echo "<input type='checkbox' name=".$listePok ['name']." value=''/><label for='moins15'>".$listePok ['name']."<img src=".$listePok ['url_image_d1']." alt= 'blabla'></label><br />";
+              echo "<input type='checkbox' name=".$listePok_d2 ['name']." value=''/><label'>".$listePok_d2 ['name']."<img src=".$listePok_d2 ['url_image_d2']." alt= 'blabla'></label><br />";
               echo "</br>";
             }
-            $lsPok->closeCursor();
+            $lsPok_d2->closeCursor();
     }
       ?>
             <input type="submit" value="Envoyer" />
