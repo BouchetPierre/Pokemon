@@ -31,7 +31,7 @@
             <?php
             while ($listePok_d2 = $lsPok_d2->fetch())
             {
-              echo "<input type=radio name=".$listePok_d2 ['name']." value=''/><label'>".$listePok_d2 ['name']."<img src=".$listePok_d2 ['url_image_d2']." alt= 'blabla'></label><br />";
+              echo "<input type='checkbox' name=".$listePok_d2 ['name']." value=''/><label'>".$listePok_d2 ['name']."<img src=".$listePok_d2 ['url_image_d2']." alt= 'blabla'></label><br />";
               echo "</br>";
             }
             $lsPok_d2->closeCursor();

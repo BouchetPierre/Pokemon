@@ -1,16 +1,29 @@
 <?php
 Class Attaque{
-  public $_nomAttaque;
-  public $_ptPower;
-  public $_powerAttaque;
+  public $nameAttaque;
+  public $ptPower;
+  public $powerAttaque;
 
-  public function degats(ptVie){
-    if (ptVie > ($this->_powerAttaque)){
-      ptVie=ptVie-($this->_powerAttaque);
+  public function __construct($_nameAttaque, $_ptPower, $_powerAttaque){
+
+   $this->setName($nameAttaque);
+   $this->setPtPower($ptPower);
+   $this->setPowerAttaque($powerAttaque);
+ }
+
+  public function degats($_ptVie, $_powerAttaque){
+    if ($_ptVie > ($this->powerAttaque)){
+      $_ptVie=$_ptVie-($this->powerAttaque);
+      return $_ptVie;
     } else {
-      echo "Vous êtes mort !!!";
+      return $messageMort = "Vous êtes mort !!!";
     }
 
+  public function win($_ptVie, $_powerAttaque){
+      $_ptVie=$_ptVie+($this->powerAttaque);
+      return $_ptVie;
   }
+
+
 }
  ?>

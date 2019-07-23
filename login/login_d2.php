@@ -17,12 +17,11 @@
             <input type="password" name="mdp_d2" placeholder="Votre mot de passe" required>
             <br>
             <input type="submit" name="envoie" value="Go !">
+        </form>
     </div>
-    <?php
-  
-
-    ?>
-    </form>
+      <?php
+  echo ($_POST['pokemon_d1']);
+      ?>
 </div>
 </body>
 </html>
