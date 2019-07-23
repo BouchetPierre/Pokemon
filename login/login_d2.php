@@ -19,12 +19,7 @@
             <input type="submit" name="envoie" value="Go !">
     </div>
     <?php
-    /*if (isset($_POST['error'])){
-        $error=$_POST['error'];
-        if ($error==1 || $error==2) {
-            echo "Ton pseudo ou ton mot de passe ne sont pas bon";
-        }
-    }*/
+  
 
     ?>
     </form>
