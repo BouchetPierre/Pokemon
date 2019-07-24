@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  localhost:3306
--- Généré le :  Ven 19 Juillet 2019 à 16:21
+-- Généré le :  Mar 23 Juillet 2019 à 15:20
 -- Version du serveur :  5.7.26-0ubuntu0.18.04.1
 -- Version de PHP :  7.2.19-0ubuntu0.18.04.1
 
@@ -23,6 +23,19 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `action`
+--
+
+CREATE TABLE `action` (
+  `id_action` int(11) NOT NULL,
+  `pv` int(11) DEFAULT NULL,
+  `fk_id_dresseur` int(11) DEFAULT NULL,
+  `fk_id_pokemon` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `dresseur`
 --
 
@@ -31,6 +44,19 @@ CREATE TABLE `dresseur` (
   `name` varchar(15) COLLATE utf8_unicode_ci DEFAULT NULL,
   `mdp` varchar(15) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Contenu de la table `dresseur`
+--
+
+INSERT INTO `dresseur` (`id_dresseur`, `name`, `mdp`) VALUES
+(4, 'noel', '123'),
+(5, 'pierre', '123'),
+(6, 'Fetra', '123'),
+(7, 'tom', '123'),
+(8, 'jean', '123'),
+(9, 'nathalie', '123'),
+(10, 'sacha', '123');
 
 -- --------------------------------------------------------
 
@@ -43,26 +69,27 @@ CREATE TABLE `pokemonDesk` (
   `name` varchar(15) COLLATE utf8_unicode_ci DEFAULT NULL,
   `url_image_d1` text COLLATE utf8_unicode_ci,
   `url_image_d2` text COLLATE utf8_unicode_ci,
-  `evol` int(1) DEFAULT NULL
+  `evol` int(1) DEFAULT NULL,
+  `pv` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Contenu de la table `pokemonDesk`
 --
 
-INSERT INTO `pokemonDesk` (`id_pokemon`, `name`, `url_image_d1`, `url_image_d2`, `evol`) VALUES
-(1, 'bulbizarre', 'image/bulbizarre_d1.gif', 'image/bulbizarre_d2.gif', 1),
-(2, 'herbizarre', 'image/herbizarre_d1.gif', 'image/herbizarre_d2.gif', 2),
-(3, 'florizarre', 'image/florizarre_d1.gif', 'image/florizarre_d2.gif', 3),
-(4, 'carapuce', 'image/carapuce_d1.gif', 'image/carapuce_d2.gif', 1),
-(5, 'carabaffe', 'image/carabaffe_d1.gif', 'image/carabaffe_d2.gif', 2),
-(6, 'tortank', 'image/tortank_d1.gif', 'image/tortank_d2.gif', 3),
-(7, 'salameche', 'image/salameche_d1.gif', 'image/salameche_d2.gif', 1),
-(8, 'reptincel', 'image/reptincel_d1.gif', 'image/reptincel_d2.gif', 2),
-(9, 'dracaufeu', 'image/dracaufeu_d1.gif', 'image/dracaufeu_d2.gif', 3),
-(10, 'fantominus', 'image/fantominus_d1.gif', 'image/fantominus_d2.gif', 1),
-(11, 'spectrum', 'image/spectrum_d1.gif', 'image/spectrum_d2.gif', 2),
-(12, 'ectoplasma', 'image/ectoplasma_d1.gif', 'image/ectoplasma_d2.gif', 3);
+INSERT INTO `pokemonDesk` (`id_pokemon`, `name`, `url_image_d1`, `url_image_d2`, `evol`, `pv`) VALUES
+(1, 'bulbizarre', 'image/bulbizarre_d1.gif', 'image/bulbizarre_d2.gif', 1, 5),
+(2, 'herbizarre', 'image/herbizarre_d1.gif', 'image/herbizarre_d2.gif', 2, 47),
+(3, 'florizarre', 'image/florizarre_d1.gif', 'image/florizarre_d2.gif', 3, 82),
+(4, 'carapuce', 'image/carapuce_d1.gif', 'image/carapuce_d2.gif', 1, 7),
+(5, 'carabaffe', 'image/carabaffe_d1.gif', 'image/carabaffe_d2.gif', 2, 53),
+(6, 'tortank', 'image/tortank_d1.gif', 'image/tortank_d2.gif', 3, 99),
+(7, 'salameche', 'image/salameche_d1.gif', 'image/salameche_d2.gif', 1, 6),
+(8, 'reptincel', 'image/reptincel_d1.gif', 'image/reptincel_d2.gif', 2, 50),
+(9, 'dracaufeu', 'image/dracaufeu_d1.gif', 'image/dracaufeu_d2.gif', 3, 87),
+(10, 'fantominus', 'image/fantominus_d1.gif', 'image/fantominus_d2.gif', 1, 4),
+(11, 'spectrum', 'image/spectrum_d1.gif', 'image/spectrum_d2.gif', 2, 45),
+(12, 'ectoplasma', 'image/ectoplasma_d1.gif', 'image/ectoplasma_d2.gif', 3, 78);
 
 -- --------------------------------------------------------
 
@@ -125,7 +152,7 @@ INSERT INTO `typeAttaque` (`id_typeAttaque`, `name`, `degat`, `pp`) VALUES
 
 CREATE TABLE `valeursPokemon` (
   `id_valeursPokemon` int(11) NOT NULL,
-  `pv` int(4) DEFAULT NULL,
+  `pv_max` int(4) DEFAULT NULL,
   `xp` int(15) DEFAULT NULL,
   `lvl` int(3) DEFAULT NULL,
   `fk_id_pokemon` int(11) NOT NULL,
@@ -136,7 +163,7 @@ CREATE TABLE `valeursPokemon` (
 -- Contenu de la table `valeursPokemon`
 --
 
-INSERT INTO `valeursPokemon` (`id_valeursPokemon`, `pv`, `xp`, `lvl`, `fk_id_pokemon`, `fk_id_dresseur`) VALUES
+INSERT INTO `valeursPokemon` (`id_valeursPokemon`, `pv_max`, `xp`, `lvl`, `fk_id_pokemon`, `fk_id_dresseur`) VALUES
 (1, 5, 0, 1, 1, NULL),
 (2, 47, 0, 1, 2, NULL),
 (3, 82, 0, 1, 3, NULL),
@@ -153,6 +180,14 @@ INSERT INTO `valeursPokemon` (`id_valeursPokemon`, `pv`, `xp`, `lvl`, `fk_id_pok
 --
 -- Index pour les tables exportées
 --
+
+--
+-- Index pour la table `action`
+--
+ALTER TABLE `action`
+  ADD PRIMARY KEY (`id_action`),
+  ADD KEY `fk_id_dresseur` (`fk_id_dresseur`),
+  ADD KEY `fk_id_pokemon` (`fk_id_pokemon`);
 
 --
 -- Index pour la table `dresseur`
@@ -185,10 +220,15 @@ ALTER TABLE `valeursPokemon`
 --
 
 --
+-- AUTO_INCREMENT pour la table `action`
+--
+ALTER TABLE `action`
+  MODIFY `id_action` int(11) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT pour la table `dresseur`
 --
 ALTER TABLE `dresseur`
-  MODIFY `id_dresseur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_dresseur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT pour la table `pokemonDesk`
 --
@@ -207,6 +247,13 @@ ALTER TABLE `valeursPokemon`
 --
 -- Contraintes pour les tables exportées
 --
+
+--
+-- Contraintes pour la table `action`
+--
+ALTER TABLE `action`
+  ADD CONSTRAINT `action_ibfk_1` FOREIGN KEY (`fk_id_dresseur`) REFERENCES `dresseur` (`id_dresseur`),
+  ADD CONSTRAINT `action_ibfk_2` FOREIGN KEY (`fk_id_pokemon`) REFERENCES `pokemonDesk` (`id_pokemon`);
 
 --
 -- Contraintes pour la table `valeursPokemon`
