@@ -2,18 +2,25 @@
 class Pokemon{
   public $namePok;
   public $urlPok;
-  public $attaques[];
+  public $attaque1;
+  public $attaque2;
+  public $attaque3;
+  public $attaque4;
   public $level=1;
-  public $ptVie;
+  public $ptVieMax;
+  public $ptVie=$ptVieMax;
   public $xpPok=0;
 
 
-  public function __construct($namePok, $urlPok, $ptVie, $attaques){
+  public function __construct($namePok, $urlPok, $ptVieMax, $attaque1, $attaque2, $attaque3, $attaque4){
 
-   $this->setNamePok($namePok);
-   $this->setUrlPok($urlPok);
-   $this->setPtVie($ptVie);
-   $this->setAttaques($attaques[]);
+   $this->namePok = $namePok;
+   $this->urlPok = $namePok;
+   $this->ptVieMax = $ptVieMax;
+   $this->attaque1 = $attaque1;
+   $this->attaque2 = $attaque2;
+   $this->attaque3 = $attaque3;
+   $this->attaque4 = $attaque4;
   }
 
   public function gainXp(){

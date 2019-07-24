@@ -3,13 +3,13 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="login.css">
-    <title>Log In</title>
+    <title>Login Dres</title>
 </head>
 <body>
 <div class="container">
 
 
-    <h1>Log In</h1>
+    <h1>Login Dresseur 1</h1>
     <div class="Formulaire">
         <form  action="verification_d1.php" method="post">
             <input type="text" name="name_d1" placeholder="Votre login" required >

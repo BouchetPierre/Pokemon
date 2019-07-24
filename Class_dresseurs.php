@@ -2,27 +2,22 @@
 
 class Dresseur{
 
-  public $_namedresseur;
-  public $_namePok;
+  public $namedresseur;
 
-  public function __construct($_namedresseur){
 
-   $this->setName($namedresseur); // Initialisation du nom.
+  public function __construct($namedresseur){
 
-  }
-
-  public function choixPok(){
-    $this->_namePok= .....;
-  }
-  public function choixAttaque(){
-
-  }
-  public function combat(){
+   $this->$namedresseur = $namedresseur; // Initialisation du nom.
 
   }
 
-
+  public function Attaque($nameAttaque){
+    if($genreAttaque == 1){
+      degats();
+    }else{
+      degats();
+      gainVie();
+    };
+  };
 
 }
-
- ?>

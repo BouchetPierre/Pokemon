@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
 <head>
@@ -20,18 +21,17 @@
           }
 
         /*--------affichage du dresseur 2 sur  la page et du choix des pokemons----------*/
-        $affichage= $dresseur->query('SELECT name FROM dresseur ORDER BY id_dresseur DESC LIMIT 1');
 
-        while ($donnee = $affichage->fetch())
-        {
-        echo "<strong>".$donnee['name']."</strong>"."</br>";
         $lsPok_d2= $dresseur->query('SELECT name, url_image_d2 FROM pokemonDesk WHERE evol = "1" ORDER BY id_pokemon');
         ?>
         <form method="post" action="../main_Pok.php">
-            <?php
+
+          <?php
+
             while ($listePok_d2 = $lsPok_d2->fetch())
             {
-              echo "<input type='checkbox' name=".$listePok_d2 ['name']." value=''/><label'>".$listePok_d2 ['name']."<img src=".$listePok_d2 ['url_image_d2']." alt= 'blabla'></label><br />";
+              $pokemon_d2=$listePok_d2['name'];
+              echo "<input type='checkbox' name=".$pokemon_d2." value=''/><label'>".$pokemon_d2."<img src=".$listePok_d2 ['url_image_d2']." alt= 'blabla'></label><br />";
               echo "</br>";
             }
             $lsPok_d2->closeCursor();
