@@ -21,7 +21,8 @@
     </div>
     <?php
     session_start();
-    $_SESSION[$pokemon_d1]=$_POST[$pokemon_d1];
+    $_SESSION['$pokemon_d1']=$_POST['$pokemon_d1'];
+    echo 'le non du pok d1 est: '.$_POST['$pokemon_d1'];
     ?>
 </div>
 </body>

@@ -1,22 +1,27 @@
 <?php
 session_start();
 
-var_dump();
 /*------connection base de donnees-------*/
 try {
-  $dresseur= new PDO('mysql:host=localhost;dbname=jeu_pokemon;charset=utf8', 'root', 'ADRAR1112', [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
+  $dresseur= new PDO('mysql:host=localhost:8888;dbname=jeu_pokemon;charset=utf8', 'root', 'root', [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
 }catch (Exception $e){
   die('Erreur : '.$e->getMessage());
 };
 
 /*------requete et construction Pokemon 1-------*/
 
-$affichage_d1= $dresseur->prepare('SELECT name, url_image_d1, pv, att1, att2, att3, att4
+/*$affichage_d1= $dresseur->prepare('SELECT name, url_image_d1, pv, att1, att2, att3, att4
                                   FROM pokemonDesk
-                                  WHERE name = ?'
+                                  WHERE name = '?''
                                     );
 $req1 = $affichage_d1->execute($_SESSION[$pokemon_d1]);
-$donneeD1 = $affichage_d1->fetch();
+$donneeD1 = $affichage_d1->fetch();*/
+var_dump($donneeD1);
+var_dump($_POST['$pokemon_d2']);
+var_dump($_SESSION['$pokemon_d1']);
+var_dump($_SESSION['name_d1']);
+var_dump($_SESSION['name_d2']);
+die;
 
 $pokemonDres_1 = new Pokemon($donneeD1['name'], $donneeD1['url_image_d1'], $donneeD1['pv'], $donneeD1['att1'], $donneeD1['att2'], $donneeD1['att3'], $donneeD1['att4']);
 
