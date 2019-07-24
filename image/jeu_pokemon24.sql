@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  localhost:3306
--- Généré le :  Mar 23 Juillet 2019 à 15:20
+-- Généré le :  Mer 24 Juillet 2019 à 15:56
 -- Version du serveur :  5.7.26-0ubuntu0.18.04.1
 -- Version de PHP :  7.2.19-0ubuntu0.18.04.1
 
@@ -50,13 +50,10 @@ CREATE TABLE `dresseur` (
 --
 
 INSERT INTO `dresseur` (`id_dresseur`, `name`, `mdp`) VALUES
-(4, 'noel', '123'),
-(5, 'pierre', '123'),
-(6, 'Fetra', '123'),
-(7, 'tom', '123'),
-(8, 'jean', '123'),
-(9, 'nathalie', '123'),
-(10, 'sacha', '123');
+(11, 'noel', '123'),
+(12, 'Fetra', '456'),
+(13, 'jean', '123'),
+(14, 'pierre', '123');
 
 -- --------------------------------------------------------
 
@@ -101,48 +98,49 @@ CREATE TABLE `typeAttaque` (
   `id_typeAttaque` int(11) NOT NULL,
   `name` varchar(15) COLLATE utf8_unicode_ci DEFAULT NULL,
   `degat` int(5) DEFAULT NULL,
-  `pp` int(5) DEFAULT NULL
+  `pp` int(5) DEFAULT NULL,
+  `genreAttaque` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Contenu de la table `typeAttaque`
 --
 
-INSERT INTO `typeAttaque` (`id_typeAttaque`, `name`, `degat`, `pp`) VALUES
-(1, 'charge', 1, 35),
-(2, 'rugissement', 1, 40),
-(3, 'vampigraine', 1, 10),
-(4, 'fouet_lianes', 1, 25),
-(5, 'poudre_toxik', 1, 15),
-(6, 'belier', 1, 30),
-(7, 'tranch_herbe', 1, 25),
-(8, 'megasangsue', 1, 10),
-(9, 'lance_soleil', 1, 5),
-(10, 'mimi_queue', 1, 40),
-(11, 'pistolet_a_O', 1, 15),
-(12, 'ecume', 1, 25),
-(13, 'morsure', 1, 15),
-(14, 'abri', 1, 15),
-(15, 'coud\'krane', 1, 30),
-(16, 'bulle_d\'O', 1, 15),
-(17, 'hydrocanon', 1, 5),
-(18, 'griffe', 1, 35),
-(19, 'flammeche', 1, 15),
-(20, 'tranche', 1, 20),
-(21, 'lance_flamme', 1, 15),
-(22, 'grimace', 1, 20),
-(23, 'croc_feu', 1, 10),
-(24, 'eclate_roc', 1, 15),
-(25, 'deflagration', 1, 5),
-(26, 'lechouille', 1, 35),
-(27, 'onde_folie', 1, 30),
-(28, 'ball_ombre', 1, 35),
-(29, 'cauchemar', 1, 25),
-(30, 'gaz_toxik', 1, 15),
-(31, 'devoreve', 1, 15),
-(32, 'psyko', 1, 25),
-(33, 'tourmente', 1, 10),
-(34, 'rafale_psy', 1, 5);
+INSERT INTO `typeAttaque` (`id_typeAttaque`, `name`, `degat`, `pp`, `genreAttaque`) VALUES
+(1, 'charge', 1, 35, 1),
+(2, 'rugissement', 1, 40, 3),
+(3, 'vampigraine', 1, 10, 2),
+(4, 'fouet_lianes', 1, 25, 1),
+(5, 'poudre_toxik', 1, 15, 3),
+(6, 'belier', 1, 30, 1),
+(7, 'tranch_herbe', 1, 25, 1),
+(8, 'megasangsue', 1, 10, 2),
+(9, 'lance_soleil', 1, 5, 1),
+(10, 'mimi_queue', 1, 40, 3),
+(11, 'pistolet_a_O', 1, 15, 1),
+(12, 'ecume', 1, 25, 1),
+(13, 'morsure', 1, 15, 1),
+(14, 'abri', 1, 15, 3),
+(15, 'coud\'krane', 1, 30, 1),
+(16, 'bulle_d\'O', 1, 15, 1),
+(17, 'hydrocanon', 1, 5, 1),
+(18, 'griffe', 1, 35, 1),
+(19, 'flammeche', 1, 15, 1),
+(20, 'tranche', 1, 20, 1),
+(21, 'lance_flamme', 1, 15, 1),
+(22, 'grimace', 1, 20, 3),
+(23, 'croc_feu', 1, 10, 1),
+(24, 'eclate_roc', 1, 15, 1),
+(25, 'deflagration', 1, 5, 1),
+(26, 'lechouille', 1, 35, 1),
+(27, 'onde_folie', 1, 30, 3),
+(28, 'ball_ombre', 1, 35, 1),
+(29, 'cauchemar', 1, 25, 1),
+(30, 'gaz_toxik', 1, 15, 3),
+(31, 'devoreve', 1, 15, 2),
+(32, 'psyko', 1, 25, 1),
+(33, 'tourmente', 1, 10, 1),
+(34, 'rafale_psy', 1, 5, 1);
 
 -- --------------------------------------------------------
 
@@ -176,6 +174,20 @@ INSERT INTO `valeursPokemon` (`id_valeursPokemon`, `pv_max`, `xp`, `lvl`, `fk_id
 (10, 4, 0, 1, 10, NULL),
 (11, 45, 0, 1, 11, NULL),
 (12, 78, 0, 1, 12, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `violence`
+--
+
+CREATE TABLE `violence` (
+  `id_violence` int(11) NOT NULL,
+  `att1` varchar(15) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `att2` varchar(15) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `att3` varchar(15) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `att4` varchar(15) COLLATE utf8_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Index pour les tables exportées
@@ -216,6 +228,12 @@ ALTER TABLE `valeursPokemon`
   ADD KEY `fk_id_dresseur` (`fk_id_dresseur`);
 
 --
+-- Index pour la table `violence`
+--
+ALTER TABLE `violence`
+  ADD PRIMARY KEY (`id_violence`);
+
+--
 -- AUTO_INCREMENT pour les tables exportées
 --
 
@@ -228,7 +246,7 @@ ALTER TABLE `action`
 -- AUTO_INCREMENT pour la table `dresseur`
 --
 ALTER TABLE `dresseur`
-  MODIFY `id_dresseur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_dresseur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT pour la table `pokemonDesk`
 --
@@ -244,6 +262,11 @@ ALTER TABLE `typeAttaque`
 --
 ALTER TABLE `valeursPokemon`
   MODIFY `id_valeursPokemon` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+--
+-- AUTO_INCREMENT pour la table `violence`
+--
+ALTER TABLE `violence`
+  MODIFY `id_violence` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- Contraintes pour les tables exportées
 --
