@@ -1,0 +1,97 @@
+body{
+  background-image: url(image/bg_arena.png);
+  background-size: cover;
+  width: 97%;
+  height: 900px;
+  margin-left: 1%;
+}
+
+.titre{
+  text-align: center;
+  height: 200px;
+}
+
+.hero{
+  display: flex;
+  justify-content: space-between;
+  height: 500px;
+}
+
+.dresseur_d1{
+  height: 100%;
+
+
+}
+h2{
+  background: rgba(0, 191, 255, 0.2);
+  margin-bottom: 50px;
+  box-shadow: 0 0 20px 0 rgba(0, 191, 255, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  text-align: center;
+  height: 35px;
+}
+
+form {
+    width:100%;
+    padding: 10px;
+    border: 1px   #f1f1f1;
+    background: rgba(0, 191, 255, 0.2);
+    box-shadow: 0 0 10px 0 rgba(0, 191, 255, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+
+}
+input{
+  width: 150px;
+  height: 35px;
+
+
+}
+.ptVie_d1{
+  background-image: url(image/pv2.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 150px;
+  height: 100px;
+  margin-top: 10px;
+
+}
+.ptVie_d2{
+  background-image: url(image/pv2.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 150px;
+  height: 100px;
+  margin-top: 10px;
+
+}
+.dresseur_d2{
+
+}
+.arene{
+display: flex;
+justify-content: space-between;
+padding-top: 150px;
+margin-left: 10%;
+margin-right: 10%;
+width:100%;
+
+}
+.pokemon_d1{
+  background-image: url(image/salameche_d2.gif);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 100px;
+  margin-left: 5%;
+
+}
+.pokemon_d2{
+  background-image: url(image/carapuce_d1.gif);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 100px;
+margin-right: 5%;
+}
+footer{
+  background-image: url(image/footer.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 50px;
+}

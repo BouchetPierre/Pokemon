@@ -2,11 +2,11 @@
 session_start();
     if(isset($_POST['name_d1']) && isset($_POST['mdp_d1']))
     {
-        // connexion à la base de données
+        // connexion à la base de données (mdp et local host a modifé sur les differents postes)
         $db_username = 'root';
-        $db_password = 'root';
+        $db_password = '';
         $db_name     = 'jeu_pokemon';
-        $db_host     = 'localhost:8888';
+        $db_host     = 'localhost';
         $db = mysqli_connect($db_host, $db_username, $db_password,$db_name)
                or die('could not connect to database');
 
