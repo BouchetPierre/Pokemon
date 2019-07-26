@@ -13,7 +13,8 @@
      <div id="bg2">
       <div id="bg3">
         <div class="titre">
-          <h1>Arène de combat</h1>
+          <h1><img src="image/uranium.png" alt="titre" width="500px"
+            height="200px"></h1>
         </div>
 
         <div class="hero">
