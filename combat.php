@@ -45,14 +45,14 @@
           </div>
               <!--Partie centrale-->
           <div class="arene">
-            <div class="pokemon_d1">
+            <div id="pokemon_d1" class="pokemon_d1">
 
             </div>
               <div class="combat" >
 
 
               </div>
-            <div class="pokemon_d2">
+            <div id="pokemon_d2" class="pokemon_d2">
 
             </div>
           </div>
@@ -84,16 +84,64 @@
     </div>
   </div>
 </div>
+<!--https://www.webdesignweb.fr/web/effet-de-parallaxe-sur-son-site-jparallax-941 a revoir le parallaxe
+  <script type="text/javascript" src="script/jquery.js"></script>
+  <script type="text/javascript" src="./script/parallax.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#bg1').parallax("center", 0, 0.1, true);
+      $('#bg2').parallax("center", 900, 0.1, true);
+      $('#bg3').parallax("center", 2900, 0.1, true);
+    })
+  </script>-->
 
-  <!--https://www.webdesignweb.fr/web/effet-de-parallaxe-sur-son-site-jparallax-941 a revoir le parallaxe
-    <script type="text/javascript" src="script/jquery.js"></script>
-    <script type="text/javascript" src="./script/parallax.min.js"></script>
-    <script type="text/javascript">
-      $(document).ready(function(){
-        $('#bg1').parallax("center", 0, 0.1, true);
-        $('#bg2').parallax("center", 900, 0.1, true);
-        $('#bg3').parallax("center", 2900, 0.1, true);
-      })
-    </script>-->
+<script>
+<?php require_once('main_Pok.php');?>;
+
+var NamePokemonD1 = <?php echo json_encode($NamePokemon_d1); ?>;
+console.log (NamePokemonD1);
+
+var Pok_d1 = document.getElementById("pokemon_d1");
+switch (NamePokemonD1) {
+  case "carapuce":
+    Pok_d1.classList.toggle("carapuce_d1")
+    break;
+  case "bulbizarre":
+    Pok_d1.classList.toggle("bulbizarre_d1")
+    break;
+  case "salameche":
+    Pok_d1.classList.toggle("salameche_d1")
+    break;
+  case "fontominus":
+    Pok_d1.classList.toggle("fontominus_d1")
+    break;
+
+  default:
+}
+
+var NamePokemonD2 = <?php echo json_encode($NamePokemon_d2); ?>;
+console.log (NamePokemonD2);
+
+var Pok_d2 = document.getElementById("pokemon_d2");
+switch (NamePokemonD2) {
+  case "carapuce":
+    Pok_d1.classList.toggle("carapuce_d2")
+    break;
+  case "bulbizarre":
+    Pok_d1.classList.toggle("bulbizarre_d2")
+    break;
+  case "salameche":
+    Pok_d1.classList.toggle("salameche_d2")
+    break;
+  case "fontominus":
+    Pok_d1.classList.toggle("fontominus_d2")
+    break;
+
+  default:
+}
+</script>
+
+
+
 </body>
 </html>

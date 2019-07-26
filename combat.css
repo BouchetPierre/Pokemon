@@ -97,8 +97,51 @@ width:100%;
   margin-left: 5%;
  margin-top: 250px;
 }
+.carapuce_d1{
+  background-image: url(image/carapuce_d2.gif);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 250px;
+  height: 200px;
+  margin-left: 5%;
+ margin-top: 250px;
+}
+.fantominus_d1{
+  background-image: url(image/fantominus_d2.gif);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 250px;
+  height: 200px;
+  margin-left: 5%;
+ margin-top: 250px;
+}
+.salameche_d1{
+  background-image: url(image/salameche_d2.gif);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 250px;
+  height: 200px;
+  margin-left: 5%;
+ margin-top: 250px;
+}
+.bulbizarre_d1{
+  background-image: url(image/sbulbizarre_d2.gif);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 250px;
+  height: 200px;
+  margin-left: 5%;
+ margin-top: 250px;
+}
+
+
+
+
 .combat{
   width: 100%;
+
+
+
 }
 .pokemon_d2{
   background-image: url(image/carapuce_d1.gif);
@@ -109,6 +152,46 @@ width:100%;
   margin-left: 5%;
   margin-top: 250px;
 }
-footer{
+.carapuce_d2{
+  background-image: url(image/carapuce_d1.gif);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 250px;
+  height: 200px;
+  margin-left: 5%;
+ margin-top: 250px;
+}
+.fantominus_d2{
+  background-image: url(image/fantominus_d1.gif);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 250px;
+  height: 200px;
+  margin-left: 5%;
+ margin-top: 250px;
+}
+.salameche_d2{
+  background-image: url(image/salameche_d1.gif);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 250px;
+  height: 200px;
+  margin-left: 5%;
+ margin-top: 250px;
+}
+.bulbizarre_d2{
+  background-image: url(image/sbulbizarre_d1.gif);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 250px;
+  height: 200px;
+  margin-left: 5%;
+ margin-top: 250px;
+}
 
+
+
+
+footer{
+text-align: center;
 }
