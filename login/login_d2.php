@@ -7,7 +7,10 @@
 </head>
 <body>
 <div class="container">
-
+  <?php
+  session_start();
+  $_SESSION['pokemon_d1']=$_POST['pokemon_d1'];
+  ?>
 
     <h1>Login dresseur 2</h1>
     <div class="Formulaire">
@@ -19,11 +22,7 @@
             <input type="submit" name="envoie" value="Go !">
         </form>
     </div>
-    <?php
-    session_start();
-    $_SESSION['$pokemon_d1']=$_POST['$pokemon_d1'];
-    echo 'le non du pok d1 est: '.$_POST['$pokemon_d1'];
-    ?>
+
 </div>
 </body>
 </html>

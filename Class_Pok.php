@@ -8,7 +8,7 @@ class Pokemon{
   public $attaque4;
   public $level=1;
   public $ptVieMax;
-  public $ptVie=$ptVieMax;
+  public $ptVie;
   public $xpPok=0;
 
 
@@ -21,6 +21,7 @@ class Pokemon{
    $this->attaque2 = $attaque2;
    $this->attaque3 = $attaque3;
    $this->attaque4 = $attaque4;
+   $this->ptvie = $ptVieMax;
   }
 
   public function gainXp(){

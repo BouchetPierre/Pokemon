@@ -12,7 +12,7 @@
         <?php
   /*------connection base de donnees-------*/
           try {
-          $dresseur= new PDO('mysql:host=localhost;dbname=jeu_pokemon;charset=utf8', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+          $dresseur= new PDO('mysql:host=localhost;dbname=jeu_pokemon;charset=utf8', 'root', 'ADRAR1112', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
           }
           catch (Exception $e)
           {
@@ -28,7 +28,7 @@
             while ($listePok_d2 = $lsPok->fetch())
             {
               $pokemon_d2=$listePok_d2['name'];
-              echo "<input type='radio' name='pokemon_d2' value='.$pokemon_d2.'><label'>".$pokemon_d2."<img src=".$listePok_d2['url_image_d2']." alt= 'blabla'></label><br />";
+              echo "<input type='radio' name='pokemon_d2' value='$pokemon_d2'><label'>".$pokemon_d2."<img src=".$listePok_d2['url_image_d2']." alt= 'blabla'></label><br />";
               echo "</br>";
             }
             $lsPok->closeCursor();

@@ -18,6 +18,6 @@ class Dresseur{
       degats();
       gainVie();
     };
-  };
+  }
 
 }
