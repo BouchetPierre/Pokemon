@@ -13,8 +13,7 @@
      <div id="bg2">
       <div id="bg3">
         <div class="titre">
-          <h1><img src="image/uranium.png" alt="titre" width="500px"
-            height="200px"></h1>
+          <h1>Arène de combat</h1>
         </div>
 
         <div class="hero">
@@ -23,19 +22,19 @@
               <h2>Dresseur 1</h2>
               <div class="attaque_d1">
 
-                <form class="attaque1_d1" action="index.html" method="post">
+                <form class="attaque1_d1" action="main_Pok.php" method="post">
                   <input type="submit" name="attaque1_d1" width="150px" value="">
                 </form>
 
-                <form class="attaque2_d1" action="index.html" method="post">
+                <form class="attaque2_d1" action="main_Pok.php" method="post">
                   <input type="submit" name="attaque2_d1" value="">
                 </form>
 
-                <form class="attaque3_d1" action="index.html" method="post">
+                <form class="attaque3_d1" action="main_Pok.php" method="post">
                   <input type="submit" name="attaque3_d1" value="">
                 </form>
 
-                <form class="attaque4_d1" action="index.html" method="post">
+                <form class="attaque4_d1" action="main_Pok.php" method="post">
                   <input type="submit" name="attaque4_d1" value="">
                 </form>
               </div>
@@ -61,16 +60,16 @@
           <div class="dresseur_d2">
             <h2>Dresseur 2</h2>
               <div class="attaque_d2">
-                <form class="attaque1_d2" action="index.html" method="post">
+                <form class="attaque1_d2" action="main_Pok.php" method="post">
                   <input type="submit" name="attaque1_d2" value="">
                 </form>
-                <form class="attaque2_d2" action="index.html" method="post">
+                <form class="attaque2_d2" action="main_Pok.php" method="post">
                   <input type="submit" name="attaque2_d2" value="">
                 </form>
-                <form class="attaque3_d2" action="index.html" method="post">
+                <form class="attaque3_d2" action="main_Pok.php" method="post">
                   <input type="submit" name="attaque3_d2" value="">
                 </form>
-                <form class="attaque4_d2" action="index.html" method="post">
+                <form class="attaque4_d2" action="main_Pok.php" method="post">
                   <input type="submit" name="attaque4_d2" value="">
                 </form>
               </div>
@@ -97,9 +96,10 @@
   </script>-->
 
 <script>
-<?php require_once('main_Pok.php');?>;
+<?php
+require_once('main_Pok.php');?>;
 
-var NamePokemonD1 = <?php echo json_encode($NamePokemon_d1); ?>;
+var NamePokemonD1 = <?php echo $_ENV[$NamePokemon_d1]; ?>;
 console.log (NamePokemonD1);
 
 var Pok_d1 = document.getElementById("pokemon_d1");
@@ -120,7 +120,7 @@ switch (NamePokemonD1) {
   default:
 }
 
-var NamePokemonD2 = <?php echo json_encode($NamePokemon_d2); ?>;
+var NamePokemonD2 = <?php echo json_encode('NamePokemon_d2'); ?>;
 console.log (NamePokemonD2);
 
 var Pok_d2 = document.getElementById("pokemon_d2");

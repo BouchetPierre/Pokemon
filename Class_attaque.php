@@ -1,14 +1,12 @@
 <?php
 Class Attaque{
   public $nameAttaque;
-  public $ptPower;
   public $powerAttaque;
   public $genreAttaque;
 
-  public function __construct($nameAttaque, $ptPower, $powerAttaque, $genreAttaque){
+  public function __construct($nameAttaque, $powerAttaque, $genreAttaque){
 
    $this->nameAttaque = $nameAttaque;
-   $this->ptPower = $ptPower;
    $this->$powerAttaque = $powerAttaque;
    $this->$genreAttaque = $genreAttaque;
  }
@@ -43,6 +41,16 @@ Class Attaque{
   public function getgenreAttaque()
   {
     return $this->genreAttaque;
+  }
+
+  public function setpowerAttaque($powerAttaque)
+  {
+    $this->powerAttaque = $powerAttaque;
+  }
+
+  public function getpowerAttaque()
+  {
+    return $this->powerAttaque;
   }
 
 }

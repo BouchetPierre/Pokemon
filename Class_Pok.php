@@ -24,6 +24,33 @@ class Pokemon{
    $this->ptvie = $ptVieMax;
   }
 
+  public function setptvie($ptVie)
+  {
+    $this->ptVie = $ptVie;
+  }
+
+  public function getptVie()
+  {
+    return $this->ptVie;
+  }
+
+  public function getptVieMax()
+  {
+    return $this->ptVieMax;
+  }
+
+
+  public function setlevel($level)
+  {
+    $this->level = $level;
+  }
+
+  public function getlevel()
+  {
+    return $this->level;
+  }
+
+
   public function gainXp(){
     $this->xpPok = $this->xpPok+1;
 
