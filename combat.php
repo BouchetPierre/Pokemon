@@ -4,7 +4,7 @@
   <link rel="stylesheet" href="combat.css">
   <meta charset="UTF-8">
 
-  <title>Document</title>
+  <title>Arène Pokémon</title>
 </head>
 <body>
   <div class="background">
@@ -56,6 +56,7 @@
               </div>
             <div class="ptVie_d2">
             <!--  <h3>Point de vie Pokemon 2</h3> -->
+                <progress id="vie_d2" value="50" max="100"></progress>
             </div>
           </div>
         </div>
@@ -68,8 +69,30 @@
 <link rel="stylesheet" href="script/submit.js">
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" charset="utf-8"></script>
 
+      <script> // Script de la barre de vie à adapter ///
 
+          var PvProgress_d1 = document.getElementById("vie_d1");
+          var PvProgress_d2 = document.getElementById("vie_d2");// valeur max
+          var degats_d1;
+          var degats_d2;
+          function pertePv_d1() {
+              if(pvProgress_d1 >=0) {
+                  progress = pvProgress_d1 - degats_d1;
+                  return PvProgress_d1
+              }else{
+                  alert("Vous êtes mort ! ")
+              }
+          };
+          function pertePv_d2() {
+              if(pvProgress_d2 >=0) {
+                  progress = pvProgress_d2 - degats_d2;
+                  return PvProgress_d2
+              }else{
+                  alert("Vous êtes mort ! ")
+              }
+          };
 
+      </script>
 
 </body>
 </html>
