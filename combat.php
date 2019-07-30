@@ -13,65 +13,45 @@
      <div id="bg2">
       <div id="bg3">
         <div class="titre">
-          <h1>Arène de combat</h1>
+          <h1><img src="image/uranium.png" alt="titre" width="500px"
+            height="200px"></h1>
         </div>
 
         <div class="hero">
           <!--Partie gauche dresseur 1-->
           <div class="dresseur_d1">
-              <h2>Dresseur 1</h2>
-              <div class="attaque_d1">
-
-                <form class="attaque1_d1" action="main_Pok.php" method="post">
-                  <input type="submit" name="attaque1_d1" width="150px" value="">
-                </form>
-
-                <form class="attaque2_d1" action="main_Pok.php" method="post">
-                  <input type="submit" name="attaque2_d1" value="">
-                </form>
-
-                <form class="attaque3_d1" action="main_Pok.php" method="post">
-                  <input type="submit" name="attaque3_d1" value="">
-                </form>
-
-                <form class="attaque4_d1" action="main_Pok.php" method="post">
-                  <input type="submit" name="attaque4_d1" value="">
+            <h2>Dresseur 1</h2>
+              <div class="att_d1">
+                <form id="attaque_d1" action="main_Pok.php" method="post">
+                  <input type="submit" id="att1_d1" name="attaque1_d1" value="a">
+                  <input type="submit" id="att2_d1" name="attaque2_d1" value="b">
+                  <input type="submit" id="att3_d1" name="attaque3_d1" value="c">
+                  <input type="submit" id="att4_d1" name="attaque4_d1" value="d">
                 </form>
               </div>
-
-            <div class="ptVie_d1">
-              <!--<h3>Point de vie Pokemon 1</h3>-->
+              <div class="ptVie_d1">
                 <progress id="vie_d1" value="50" max="100"></progress>
-            </div>
+              </div>
           </div>
+
               <!--Partie centrale-->
           <div class="arene">
             <div id="pokemon_d1" class="pokemon_d1">
-
             </div>
-              <div class="combat" >
-
-
-              </div>
+            <div class="combat" >
+            </div>
             <div id="pokemon_d2" class="pokemon_d2">
-
             </div>
           </div>
           <!--Partie droite dresseur 2-->
           <div class="dresseur_d2">
             <h2>Dresseur 2</h2>
-              <div class="attaque_d2">
-                <form class="attaque1_d2" action="main_Pok.php" method="post">
-                  <input type="submit" name="attaque1_d2" value="">
-                </form>
-                <form class="attaque2_d2" action="main_Pok.php" method="post">
-                  <input type="submit" name="attaque2_d2" value="">
-                </form>
-                <form class="attaque3_d2" action="main_Pok.php" method="post">
-                  <input type="submit" name="attaque3_d2" value="">
-                </form>
-                <form class="attaque4_d2" action="main_Pok.php" method="post">
-                  <input type="submit" name="attaque4_d2" value="">
+              <div class="att_d2">
+                <form id="attaque_d2" action="main_Pok.php" method="post">
+                  <input type="submit" id="att1_d2"  name="attaque1_d2" value="e">
+                  <input type="submit" id="att2_d2"  name="attaque2_d2" value="f">
+                  <input type="submit" id="att3_d2"  name="attaque3_d2" value="g">
+                  <input type="submit" id="att4_d2"  name="attaque4_d2" value="h">
                 </form>
               </div>
             <div class="ptVie_d2">
@@ -86,6 +66,7 @@
     </div>
   </div>
 </div>
+<link rel="stylesheet" href="script/submit.js">
 
       <script> // Script de la barre de vie à adapter ///
 
