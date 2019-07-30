@@ -126,7 +126,7 @@ width:100%;
   width: 250px;
   height: 200px;
   margin-left: 5%;
- margin-top: 250px;
+  margin-top: 250px;
 }
 .salameche_d1{
   background-image: url(image/salameche_d2.gif);
@@ -135,16 +135,16 @@ width:100%;
   width: 250px;
   height: 200px;
   margin-left: 5%;
- margin-top: 250px;
+  margin-top: 250px;
 }
 .bulbizarre_d1{
-  background-image: url(image/sbulbizarre_d2.gif);
+  background-image: url(image/bulbizarre_d2.gif);
   background-size: contain;
   background-repeat: no-repeat;
   width: 250px;
   height: 200px;
   margin-left: 5%;
- margin-top: 250px;
+  margin-top: 250px;
 }
 
 
@@ -193,7 +193,7 @@ width:100%;
  margin-top: 250px;
 }
 .bulbizarre_d2{
-  background-image: url(image/sbulbizarre_d1.gif);
+  background-image: url(image/bulbizarre_d1.gif);
   background-size: contain;
   background-repeat: no-repeat;
   width: 250px;
