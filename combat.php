@@ -4,7 +4,7 @@
   <link rel="stylesheet" href="combat.css">
   <meta charset="UTF-8">
 
-  <title>Document</title>
+  <title>Arène Pokémon</title>
 </head>
 <body>
   <div class="background">
@@ -41,6 +41,7 @@
 
             <div class="ptVie_d1">
               <!--<h3>Point de vie Pokemon 1</h3>-->
+                <progress id="vie_d1" value="50" max="100"></progress>
             </div>
           </div>
               <!--Partie centrale-->
@@ -75,6 +76,7 @@
               </div>
             <div class="ptVie_d2">
             <!--  <h3>Point de vie Pokemon 2</h3> -->
+                <progress id="vie_d2" value="50" max="100"></progress>
             </div>
           </div>
         </div>
@@ -84,18 +86,33 @@
     </div>
   </div>
 </div>
-<!--https://www.webdesignweb.fr/web/effet-de-parallaxe-sur-son-site-jparallax-941 a revoir le parallaxe
-  <script type="text/javascript" src="script/jquery.js"></script>
-  <script type="text/javascript" src="./script/parallax.min.js"></script>
-  <script type="text/javascript">
-    $(document).ready(function(){
-      $('#bg1').parallax("center", 0, 0.1, true);
-      $('#bg2').parallax("center", 900, 0.1, true);
-      $('#bg3').parallax("center", 2900, 0.1, true);
-    })
-  </script>-->
 
-<script>
+      <script> // Script de la barre de vie à adapter ///
+
+          var PvProgress_d1 = document.getElementById("vie_d1");
+          var PvProgress_d2 = document.getElementById("vie_d2");// valeur max
+          var degats_d1;
+          var degats_d2;
+          function pertePv_d1() {
+              if(pvProgress_d1 >=0) {
+                  progress = pvProgress_d1 - degats_d1;
+                  return PvProgress_d1
+              }else{
+                  alert("Vous êtes mort ! ")
+              }
+          };
+          function pertePv_d2() {
+              if(pvProgress_d2 >=0) {
+                  progress = pvProgress_d2 - degats_d2;
+                  return PvProgress_d2
+              }else{
+                  alert("Vous êtes mort ! ")
+              }
+          };
+
+      </script>
+
+    <script>
 <?php
 require_once('main_Pok.php');?>;
 
