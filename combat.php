@@ -67,6 +67,7 @@
   </div>
 </div>
 <link rel="stylesheet" href="script/submit.js">
+<script src="https://code.jquery.com/jquery-3.1.0.min.js" charset="utf-8"></script>
 
       <script> // Script de la barre de vie à adapter ///
 
