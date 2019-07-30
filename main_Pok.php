@@ -14,7 +14,7 @@ try {
 
 /*------requete et construction Pokemon 1-------*/
 
-$affichage_d1= $dresseur->prepare('SELECT name, url_image_d1, pv, fk_id_att1, fk_id_att2, fk_id_att3, fk_id_att4
+$affichage_d1= $dresseur->prepare('SELECT name, url_image_d2, pv, fk_id_att1, fk_id_att2, fk_id_att3, fk_id_att4
                                   FROM pokemonDesk
                                   WHERE name = ?');
 $req1 = $affichage_d1->execute(array($_SESSION['pokemon_d1']));
@@ -40,15 +40,16 @@ $tabResGenretD1;
     }
 
 $NamePokemon_d1 = $donneeD1['name'];
+$_SESSION['NamePokemon_d1']=$NamePokemon_d1;
 
-$pokemonDres_1 = new Pokemon($donneeD1['name'], $donneeD1['url_image_d1'], $donneeD1['pv'], $tabResNameD1[0], $tabResNameD1[1], $tabResNameD1[2], $tabResNameD1[3]);
+$pokemonDres_1 = new Pokemon($donneeD1['name'], $donneeD1['url_image_d2'], $donneeD1['pv'], $tabResNameD1[0], $tabResNameD1[1], $tabResNameD1[2], $tabResNameD1[3]);
 
 
 /*------requete et construction Pokemon 2-------*/
 
 $_SESSION['pokemon_d2']=$_POST['pokemon_d2'];
 
-$affichage_d2= $dresseur->prepare('SELECT name, url_image_d2, pv, fk_id_att1, fk_id_att2, fk_id_att3, fk_id_att4
+$affichage_d2= $dresseur->prepare('SELECT name, url_image_d1, pv, fk_id_att1, fk_id_att2, fk_id_att3, fk_id_att4
                                   FROM pokemonDesk
                                   WHERE name = ?');
 $req2 = $affichage_d2->execute(array($_SESSION['pokemon_d2']));
@@ -73,7 +74,9 @@ $tabResGenretD2;
     }
 
 $NamePokemon_d2=$donneeD2['name'];
-$pokemonDres_2 = new Pokemon($donneeD2['name'], $donneeD2['url_image_d2'], $donneeD2['pv'], $tabResNameD2[0], $tabResNameD2[1], $tabResNameD2[2], $tabResNameD2[3]);
+$_SESSION['NamePokemon_d2']=$NamePokemon_d2;
+
+$pokemonDres_2 = new Pokemon($donneeD2['name'], $donneeD2['url_image_d1'], $donneeD2['pv'], $tabResNameD2[0], $tabResNameD2[1], $tabResNameD2[2], $tabResNameD2[3]);
 
 /*------construction Dresseur------*/
 
@@ -98,9 +101,57 @@ $attaque2_d2 = new Attaque( $tabResNameD2[1], $tabResDegatD2[1], $tabResGenretD2
 $attaque3_d2 = new Attaque( $tabResNameD2[2], $tabResDegatD2[2], $tabResGenretD2[2]);
 $attaque4_d2 = new Attaque( $tabResNameD2[3], $tabResDegatD2[3], $tabResGenretD2[3]);
 
-$AQuiLeTour='d1';
-if(!empty($_POST['attaque1_d1']) && $AQuiLeTour=='d1' && $tabResGenretD2 != 2) {
 
+?>
+<script>
+<?php
+require_once('main_Pok.php');?>;
+
+var NamePokemonD1 = '<?php echo $_SESSION['NamePokemon_d1']; ?>';
+console.log(NamePokemonD1);
+
+var Pok_d1 = document.getElementById("pokemon_d1");
+switch (NamePokemonD1) {
+  case "carapuce":
+    Pok_d1.classList.toggle("carapuce_d1")
+    break;
+  case "bulbizarre":
+    Pok_d1.classList.toggle("bulbizarre_d1")
+    break;
+  case "salameche":
+    Pok_d1.classList.toggle("salameche_d1")
+    break;
+  case "fantominus":
+    Pok_d1.classList.toggle("fantominus_d1")
+    break;
+  default:
+}
+
+var NamePokemonD2 = '<?php echo $_SESSION['NamePokemon_d2']; ?>';
+console.log(NamePokemonD2);
+
+var Pok_d2 = document.getElementById("pokemon_d2");
+switch (NamePokemonD2) {
+  case "carapuce":
+    Pok_d2.classList.toggle("carapuce_d2")
+    break;
+  case "bulbizarre":
+    Pok_d2.classList.toggle("bulbizarre_d2")
+    break;
+  case "salameche":
+    Pok_d2.classList.toggle("salameche_d2")
+    break;
+  case "fantominus":
+    Pok_d2.classList.toggle("fantominus_d2")
+    break;
+  default:
+}
+</script>
+
+<?php
+
+  $AQuiLeTour='d1';
+  if(!empty($_POST['attaque1_d1']) && $AQuiLeTour=='d1' && $tabResGenretD2 != 2) {
   degats($pokemonDres_2->getptVie(),$attaque1_d1->getpowerAttaque());
   $pokemonDres_2->setptVie($ptVie);
   $AQuiLeTour='d2';

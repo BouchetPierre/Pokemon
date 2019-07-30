@@ -4,7 +4,7 @@
   <link rel="stylesheet" href="combat.css">
   <meta charset="UTF-8">
 
-  <title>Arène Pokémon</title>
+  <title>Document</title>
 </head>
 <body>
   <div class="background">
@@ -23,11 +23,11 @@
               <div class="attaque_d1">
 
                 <form class="attaque1_d1" action="main_Pok.php" method="post">
-                  <input type="submit" name="attaque1_d1" width="150px" value="">
+                  <input type="submit" name="attaque1_d1" width="150px" value="a">
                 </form>
 
                 <form class="attaque2_d1" action="main_Pok.php" method="post">
-                  <input type="submit" name="attaque2_d1" value="">
+                  <input type="submit" name="attaque2_d1" value="a">
                 </form>
 
                 <form class="attaque3_d1" action="main_Pok.php" method="post">
@@ -41,7 +41,6 @@
 
             <div class="ptVie_d1">
               <!--<h3>Point de vie Pokemon 1</h3>-->
-                <progress id="vie_d1" value="50" max="100"></progress>
             </div>
           </div>
               <!--Partie centrale-->
@@ -76,7 +75,6 @@
               </div>
             <div class="ptVie_d2">
             <!--  <h3>Point de vie Pokemon 2</h3> -->
-                <progress id="vie_d2" value="50" max="100"></progress>
             </div>
           </div>
         </div>
@@ -86,78 +84,17 @@
     </div>
   </div>
 </div>
+<!--https://www.webdesignweb.fr/web/effet-de-parallaxe-sur-son-site-jparallax-941 a revoir le parallaxe
+  <script type="text/javascript" src="script/jquery.js"></script>
+  <script type="text/javascript" src="./script/parallax.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#bg1').parallax("center", 0, 0.1, true);
+      $('#bg2').parallax("center", 900, 0.1, true);
+      $('#bg3').parallax("center", 2900, 0.1, true);
+    })
+  </script>-->
 
-      <script> // Script de la barre de vie à adapter ///
-
-          var PvProgress_d1 = document.getElementById("vie_d1");
-          var PvProgress_d2 = document.getElementById("vie_d2");// valeur max
-          var degats_d1;
-          var degats_d2;
-          function pertePv_d1() {
-              if(pvProgress_d1 >=0) {
-                  progress = pvProgress_d1 - degats_d1;
-                  return PvProgress_d1
-              }else{
-                  alert("Vous êtes mort ! ")
-              }
-          };
-          function pertePv_d2() {
-              if(pvProgress_d2 >=0) {
-                  progress = pvProgress_d2 - degats_d2;
-                  return PvProgress_d2
-              }else{
-                  alert("Vous êtes mort ! ")
-              }
-          };
-
-      </script>
-
-    <script>
-<?php
-require_once('main_Pok.php');?>;
-
-var NamePokemonD1 = <?php echo $_ENV[$NamePokemon_d1]; ?>;
-console.log (NamePokemonD1);
-
-var Pok_d1 = document.getElementById("pokemon_d1");
-switch (NamePokemonD1) {
-  case "carapuce":
-    Pok_d1.classList.toggle("carapuce_d1")
-    break;
-  case "bulbizarre":
-    Pok_d1.classList.toggle("bulbizarre_d1")
-    break;
-  case "salameche":
-    Pok_d1.classList.toggle("salameche_d1")
-    break;
-  case "fontominus":
-    Pok_d1.classList.toggle("fontominus_d1")
-    break;
-
-  default:
-}
-
-var NamePokemonD2 = <?php echo json_encode('NamePokemon_d2'); ?>;
-console.log (NamePokemonD2);
-
-var Pok_d2 = document.getElementById("pokemon_d2");
-switch (NamePokemonD2) {
-  case "carapuce":
-    Pok_d1.classList.toggle("carapuce_d2")
-    break;
-  case "bulbizarre":
-    Pok_d1.classList.toggle("bulbizarre_d2")
-    break;
-  case "salameche":
-    Pok_d1.classList.toggle("salameche_d2")
-    break;
-  case "fontominus":
-    Pok_d1.classList.toggle("fontominus_d2")
-    break;
-
-  default:
-}
-</script>
 
 
 
