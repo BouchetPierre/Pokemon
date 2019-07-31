@@ -21,8 +21,8 @@ class Pokemon{
    $this->attaque2 = $attaque2;
    $this->attaque3 = $attaque3;
    $this->attaque4 = $attaque4;
-   $this->ptvie = $ptVie;
-   
+   $this->ptVie = $ptVie;
+
   }
 
   public function setptvie($ptVie)

@@ -96,6 +96,7 @@ $attaque2_d2 = new Attaque( $tabResNameD2[1], $tabResDegatD2[1], $tabResGenretD2
 $attaque3_d2 = new Attaque( $tabResNameD2[2], $tabResDegatD2[2], $tabResGenretD2[2]);
 $attaque4_d2 = new Attaque( $tabResNameD2[3], $tabResDegatD2[3], $tabResGenretD2[3]);
 ?>
+
 <script>
 
 /*------nom des attaques pour chaque pokémon -------*/
@@ -185,12 +186,12 @@ dresseur2.innerHTML = nameD2;
 <script>
 /*------affichage des points de vie du pokémon-------*/
 //<script type="text/javascript" src="script/barrePv.js" charset="utf-8">/script>
-var pvD1max = '<?php echo  $donneeD1['pv_max']; ?>';
-var pvD2max = '<?php echo  $donneeD2['pv_max']; ?>';
-var pvD1 = '<?php echo  $donneeD1['pv']; ?>';
-var pvD2 = '<?php echo  $donneeD2['pv']; ?>';
-console.log(pvD1max);
-console.log(pvD1);
+var pvD1max = '<?php echo  $pokemonDres_1->getptVieMax(); ?>';
+var pvD2max = '<?php echo  $pokemonDres_2->getptVieMax(); ?>';
+var pvD1 = '<?php echo  $pokemonDres_1->getptVie(); ?>';
+var pvD2 = '<?php echo  $pokemonDres_2->getptVie(); ?>';
+console.log(pvD2max);
+console.log(pvD2);
 
 document.getElementById("vie_d1").max = pvD1max;
 document.getElementById("vie_d2").max = pvD2max;
@@ -201,23 +202,28 @@ document.getElementById("vie_d2").value = pvD2;
 
 <?php
 
-  $AQuiLeTour='d1';
-  if(!empty($_POST['attaque1_d1']) && $AQuiLeTour=='d1' && $tabResGenretD2 != 2) {
-  degats($pokemonDres_2->getptVie(),$attaque1_d1->getpowerAttaque());
-  $pokemonDres_2->setptVie($ptVie);
-  $AQuiLeTour='d2';
-  var_dump('$ptvie');
+$AQuiLeTour='d1';
+
+ if(!empty($_POST['attaque1_d1']) && $AQuiLeTour=='d1' && $attaque1_d1->getgenreAttaque()!= 2) {
+ $resultAttaq1=$attaque1_d1->degats($pokemonDres_2->getptVie(),$attaque1_d1->getpowerAttaque());
+ $pokemonDres_2->setptVie($resultAttaq1);
+ ?>
+ <script>
+ var pvD2 = '<?php echo  $pokemonDres_2->getptVie(); ?>';
+ document.getElementById("vie_d2").value = pvD2;
+ </script>
+ <?php
+ $AQuiLeTour='d2';
 
 } elseif (!empty($_POST['attaque1_d1']) && $AQuiLeTour=='d1' && $tabResGenretD2 == 2) {
 
-  degats($pokemonDres_2->getptVie(),$attaque1_d1->getpowerAttaque());
-  gainVie($pokemonDres_1->getptVie(),$attaque1_d1->getpowerAttaque(),$pokemonDres_1->getptVieMax());
-  $AQuiLeTour='d2';
+ degats($pokemonDres_2->getptVie(),$attaque1_d1->getpowerAttaque());
+ gainVie($pokemonDres_1->getptVie(),$attaque1_d1->getpowerAttaque(),$pokemonDres_1->getptVieMax());
+ $AQuiLeTour='d2';
 
 } else if(!empty($_POST['attaque1_d1'])){
-  echo "Ce n'est pas à vous de jouer !!!";
+ echo "Ce n'est pas à vous de jouer !!!";
 }
-
 
 
  ?>

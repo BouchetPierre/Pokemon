@@ -7,8 +7,8 @@ Class Attaque{
   public function __construct($nameAttaque, $powerAttaque, $genreAttaque){
 
    $this->nameAttaque = $nameAttaque;
-   $this->$powerAttaque = $powerAttaque;
-   $this->$genreAttaque = $genreAttaque;
+   $this->powerAttaque = $powerAttaque;
+   $this->genreAttaque = $genreAttaque;
  }
 
   public function degats($ptVie, $powerAttaque){
