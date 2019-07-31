@@ -42,7 +42,7 @@ $NamePokemon_d1 = $donneeD1['name'];
 $_SESSION['NamePokemon_d1']=$NamePokemon_d1;
 
 $pokemonDres_1 = new Pokemon($donneeD1['name'], $donneeD1['url_image_d2'], $donneeD1['pv'],$donneeD1['pv_max'], $tabResNameD1[0], $tabResNameD1[1], $tabResNameD1[2], $tabResNameD1[3]);
-
+$level_d1 = $pokemonDres_1->getLevel();
 
 /*------requete et construction Pokemon 2-------*/
 
@@ -76,7 +76,7 @@ $NamePokemon_d2=$donneeD2['name'];
 $_SESSION['NamePokemon_d2']=$NamePokemon_d2;
 
 $pokemonDres_2 = new Pokemon($donneeD2['name'], $donneeD2['url_image_d1'], $donneeD2['pv'], $donneeD2['pv_max'], $tabResNameD2[0], $tabResNameD2[1], $tabResNameD2[2], $tabResNameD2[3]);
-
+$level_d2 = $pokemonDres_2->getLevel();
 /*------construction Dresseur------*/
 
 $dresseur_d1 = new Dresseur($_SESSION['name_d1']);
@@ -170,7 +170,7 @@ switch (NamePokemonD2) {
 </script>
 
 <script>
-/*------affichage du nom du dresseur et du pokemon sélectionnés-------*/
+/*------affichage du nom du dresseur, du pokemon et de son niveau sélectionnés-------*/
 //<script type="text/javascript" src="script/nomDresseur.js" charset="utf-8">/script>
 
 var nameD1 = '<?php echo $_SESSION['name_d1']; ?>';
@@ -187,6 +187,18 @@ dresseur1.innerHTML = nameD1;
 dresseur2.innerHTML = nameD2;
 pokemon1.innerHTML = pokD1;
 pokemon2.innerHTML = pokD2;
+
+  var lvlD1 = '<?php echo $level_d1; ?>';
+  var lvlD2 = '<?php echo $level_d2; ?>';
+
+  var lvl_d1 = document.getElementById('lvl1');
+  var lvl_d2 = document.getElementById('lvl2');
+
+  lvl_d1.innerHTML = lvlD1;
+  lvl_d2.innerHTML = lvlD2;
+
+
+
 </script>
 
 <script>

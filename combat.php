@@ -22,6 +22,7 @@
           <div class="dresseur_d1">
             <h2 id="name_d1"></h2>
             <h3 id="pok_d1"></h3>
+            <p id="lvl1"></p>
               <div class="att_d1">
                 <form id="attaque_d1" action="main_Pok.php" method="post">
                   <input type="submit" id="att1_d1" name="attaque1_d1" value="a">
@@ -50,6 +51,7 @@
           <div class="dresseur_d2">
             <h2 id="name_d2"></h2>
             <h3 id="pok_d2"></h3>
+              <p id="lvl2"></p>
               <div class="att_d2">
                 <form id="attaque_d2" action="main_Pok.php" method="post">
                   <input type="submit" id="att1_d2"  name="attaque1_d2" value="e">

@@ -9,8 +9,6 @@
 </head>
 <body>
 <div class="container">
-
-
     <h1>Login Dresseur 1</h1>
     <div class="Formulaire">
         <form  action="verification_d1.php" method="post">
