@@ -14,12 +14,11 @@ try {
 
 /*------requete et construction Pokemon 1-------*/
 
-$affichage_d1= $dresseur->prepare('SELECT name, url_image_d2, pv, fk_id_att1, fk_id_att2, fk_id_att3, fk_id_att4
+$affichage_d1= $dresseur->prepare('SELECT name, url_image_d2, pv, pv_max, fk_id_att1, fk_id_att2, fk_id_att3, fk_id_att4
                                   FROM pokemonDesk
                                   WHERE name = ?');
 $req1 = $affichage_d1->execute(array($_SESSION['pokemon_d1']));
 $donneeD1 = $affichage_d1->fetch();
-
 
 $bindsD1 = [$donneeD1['fk_id_att1'], $donneeD1['fk_id_att2'], $donneeD1['fk_id_att3'], $donneeD1['fk_id_att4']];
 $bindsD1Prepared = implode(',', $bindsD1);
@@ -42,14 +41,14 @@ $tabResGenretD1;
 $NamePokemon_d1 = $donneeD1['name'];
 $_SESSION['NamePokemon_d1']=$NamePokemon_d1;
 
-$pokemonDres_1 = new Pokemon($donneeD1['name'], $donneeD1['url_image_d2'], $donneeD1['pv'], $tabResNameD1[0], $tabResNameD1[1], $tabResNameD1[2], $tabResNameD1[3]);
+$pokemonDres_1 = new Pokemon($donneeD1['name'], $donneeD1['url_image_d2'], $donneeD1['pv'],$donneeD1['pv_max'], $tabResNameD1[0], $tabResNameD1[1], $tabResNameD1[2], $tabResNameD1[3]);
 
 
 /*------requete et construction Pokemon 2-------*/
 
 $_SESSION['pokemon_d2']=$_POST['pokemon_d2'];
 
-$affichage_d2= $dresseur->prepare('SELECT name, url_image_d1, pv, fk_id_att1, fk_id_att2, fk_id_att3, fk_id_att4
+$affichage_d2= $dresseur->prepare('SELECT name, url_image_d1, pv, pv_max, fk_id_att1, fk_id_att2, fk_id_att3, fk_id_att4
                                   FROM pokemonDesk
                                   WHERE name = ?');
 $req2 = $affichage_d2->execute(array($_SESSION['pokemon_d2']));
@@ -76,16 +75,12 @@ $tabResGenretD2;
 $NamePokemon_d2=$donneeD2['name'];
 $_SESSION['NamePokemon_d2']=$NamePokemon_d2;
 
-$pokemonDres_2 = new Pokemon($donneeD2['name'], $donneeD2['url_image_d1'], $donneeD2['pv'], $tabResNameD2[0], $tabResNameD2[1], $tabResNameD2[2], $tabResNameD2[3]);
+$pokemonDres_2 = new Pokemon($donneeD2['name'], $donneeD2['url_image_d1'], $donneeD2['pv'], $donneeD2['pv_max'], $tabResNameD2[0], $tabResNameD2[1], $tabResNameD2[2], $tabResNameD2[3]);
 
 /*------construction Dresseur------*/
 
-
 $dresseur_d1 = new Dresseur($_SESSION['name_d1']);
-
-
 $dresseur_d2 = new Dresseur($_SESSION['name_d2']);
-
 
 /*------requete et des attaques du dresseur 1-------*/
 
@@ -100,12 +95,12 @@ $attaque1_d2 = new Attaque( $tabResNameD2[0], $tabResDegatD2[0], $tabResGenretD2
 $attaque2_d2 = new Attaque( $tabResNameD2[1], $tabResDegatD2[1], $tabResGenretD2[1]);
 $attaque3_d2 = new Attaque( $tabResNameD2[2], $tabResDegatD2[2], $tabResGenretD2[2]);
 $attaque4_d2 = new Attaque( $tabResNameD2[3], $tabResDegatD2[3], $tabResGenretD2[3]);
-
-
 ?>
 <script>
 
 /*------nom des attaques pour chaque pokémon -------*/
+//<script type="text/javascript" src="script/nomAttaque.js" charset="utf-8">/script>
+
 
 var NamePokemonD1 = '<?php echo $_SESSION['NamePokemon_d1']; ?>';
 
@@ -130,6 +125,7 @@ document.getElementById("att3_d2").value = tabResName3D2 ;
 document.getElementById("att4_d2").value = tabResName4D2 ;
 
 /*------affichage du pokémon sélectionné-------*/
+//<script type="text/javascript" src="script/pokemonSelectionné.js" charset="utf-8">/script>
 
 var NamePokemonD1 = '<?php echo $_SESSION['NamePokemon_d1']; ?>';
 console.log(NamePokemonD1);
@@ -171,21 +167,35 @@ switch (NamePokemonD2) {
   default:
 }
 </script>
-<script>
 
+<script>
 /*------affichage du nom du dresseur sélectionné-------*/
+//<script type="text/javascript" src="script/nomDresseur.js" charset="utf-8">/script>
+
 var nameD1 = '<?php echo $_SESSION['name_d1']; ?>';
 var nameD2 = '<?php echo $_SESSION['name_d2']; ?>';
 
-
 var dresseur1 = document.getElementById('name_d1') ;
 var dresseur2 = document.getElementById('name_d2') ;
+
 dresseur1.innerHTML = nameD1;
 dresseur2.innerHTML = nameD2;
+</script>
 
+<script>
+/*------affichage des points de vie du pokémon-------*/
+//<script type="text/javascript" src="script/barrePv.js" charset="utf-8">/script>
+var pvD1max = '<?php echo  $donneeD1['pv_max']; ?>';
+var pvD2max = '<?php echo  $donneeD2['pv_max']; ?>';
+var pvD1 = '<?php echo  $donneeD1['pv']; ?>';
+var pvD2 = '<?php echo  $donneeD2['pv']; ?>';
+console.log(pvD1max);
+console.log(pvD1);
 
-
-
+document.getElementById("vie_d1").max = pvD1max;
+document.getElementById("vie_d2").max = pvD2max;
+document.getElementById("vie_d1").value = pvD1;
+document.getElementById("vie_d2").value = pvD2;
 
 </script>
 

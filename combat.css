@@ -37,6 +37,10 @@ body {
 }
 
 h2{
+  font-family: 'WaltographRegular';
+   font-size: 40px;
+   font-weight: normal;
+   font-style: italic;
   background: rgba(0, 191, 255, 0.2);
   margin-bottom: 50px;
   box-shadow: 0 0 20px 0 rgba(0, 191, 255, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
@@ -54,6 +58,10 @@ form {
 
 }
 input{
+  font-family: 'GnraleStationExtended';
+  font-size: 10px;
+   font-weight: normal;
+   font-style: normal;
   background: rgba(0, 191, 255, 0.5);
   width: 100px;
   height: 35px;

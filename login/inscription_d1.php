@@ -2,6 +2,8 @@
 <html lang="fr" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/gnu-unifont" type="text/css"/>
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/generale-station" type="text/css"/>
     <link rel="stylesheet" href="login.css">
     <title>Inscription</title>
   </head>

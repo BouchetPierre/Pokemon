@@ -1,9 +1,14 @@
 body{
     background-image:url(../image/bg_login.jpg);
     background-size: cover;
+    font-family: 'GnraleStationExtended';
+    font-weight: normal;
+    font-style: normal;
 }
 h1{
-  text-align: center;
+  font-family: 'UnifontMedium';
+   font-weight: normal;
+   font-style:  italic;
 }
 .Formulaire{
 text-align: center;
