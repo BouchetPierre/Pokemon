@@ -20,7 +20,7 @@
         <div class="hero">
           <!--Partie gauche dresseur 1-->
           <div class="dresseur_d1">
-            <h2>Dresseur 1</h2>
+            <h2 id="name_d1"></h2>
               <div class="att_d1">
                 <form id="attaque_d1" action="main_Pok.php" method="post">
                   <input type="submit" id="att1_d1" name="attaque1_d1" value="a">
@@ -45,7 +45,7 @@
           </div>
           <!--Partie droite dresseur 2-->
           <div class="dresseur_d2">
-            <h2>Dresseur 2</h2>
+            <h2 id="name_d2"></h2>
               <div class="att_d2">
                 <form id="attaque_d2" action="main_Pok.php" method="post">
                   <input type="submit" id="att1_d2"  name="attaque1_d2" value="e">
