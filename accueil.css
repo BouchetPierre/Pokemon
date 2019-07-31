@@ -127,7 +127,7 @@ width:100%;
 
 }
 .pokemon_d1{
-  /* background-image: url(image/salameche_d2.gif); */
+  background-image: url(image/salameche_d2.gif);
   background-size: contain;
   background-repeat: no-repeat;
   width: 250px;
@@ -182,7 +182,7 @@ width:100%;
 
 }
 .pokemon_d2{
-  /* background-image: url(image/carapuce_d1.gif); */
+  background-image: url(image/carapuce_d1.gif);
   background-size: contain;
   background-repeat: no-repeat;
   width: 250px;

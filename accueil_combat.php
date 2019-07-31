@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="combat.css">
+  <link rel="stylesheet" href="accueil.css">
+  <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/waltograph" type="text/css"/>
+  <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/generale-station" type="text/css"/>
   <meta charset="UTF-8">
 
   <title>Arène Pokémon</title>
@@ -30,8 +32,8 @@
             <div id="pokemon_d1" class="pokemon_d1">
             </div>
             <div class="combat" >
-              <form id="combatez" action="main_Pok.php" method="post">
-                <input type="submit" id="combatez" name="combatez" value="combatez">
+              <form id="combattez" action="main_Pok.php" method="post">
+                <input type="submit" id="combattez" name="combattez" value="combattez">
               </form>
             </div>
             <div id="pokemon_d2" class="pokemon_d2">
@@ -41,7 +43,7 @@
           <div class="dresseur_d2">
             <h2 id="name_d2"></h2>
               <div class="att_d2">
-              </div>          
+              </div>
           </div>
         </div>
         <footer>

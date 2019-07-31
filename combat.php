@@ -21,6 +21,7 @@
           <!--Partie gauche dresseur 1-->
           <div class="dresseur_d1">
             <h2 id="name_d1"></h2>
+            <h3 id="pok_d1"></h3>
               <div class="att_d1">
                 <form id="attaque_d1" action="main_Pok.php" method="post">
                   <input type="submit" id="att1_d1" name="attaque1_d1" value="a">
@@ -32,8 +33,10 @@
               <div class="ptVie_d1">
                 <progress id="vie_d1" value="" max=""></progress>
               </div>
+              <!-- <div class="experience_d1">
+                <progress id="xp_d1" value=" " max=""></progress>
+              </div> -->
           </div>
-
               <!--Partie centrale-->
           <div class="arene">
             <div id="pokemon_d1" class="pokemon_d1">
@@ -46,6 +49,7 @@
           <!--Partie droite dresseur 2-->
           <div class="dresseur_d2">
             <h2 id="name_d2"></h2>
+            <h3 id="pok_d2"></h3>
               <div class="att_d2">
                 <form id="attaque_d2" action="main_Pok.php" method="post">
                   <input type="submit" id="att1_d2"  name="attaque1_d2" value="e">
@@ -55,9 +59,11 @@
                 </form>
               </div>
             <div class="ptVie_d2">
-            <!--  <h3>Point de vie Pokemon 2</h3> -->
-                <progress id="vie_d2" value="" max=""></progress>
+              <progress id="vie_d2" value="" max=""></progress>
             </div>
+            <!-- <div class="experience_d2">
+              <progress id="xp_d2" value=" " max=""></progress>
+            </div> -->
           </div>
         </div>
         <footer>
