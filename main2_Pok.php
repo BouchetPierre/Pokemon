@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once('combat2.php');
+require_once('accueil_combat.php');
 
 /*------connection base de donnees-------*/
 try {

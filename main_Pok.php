@@ -170,17 +170,23 @@ switch (NamePokemonD2) {
 </script>
 
 <script>
-/*------affichage du nom du dresseur sélectionné-------*/
+/*------affichage du nom du dresseur et du pokemon sélectionnés-------*/
 //<script type="text/javascript" src="script/nomDresseur.js" charset="utf-8">/script>
 
 var nameD1 = '<?php echo $_SESSION['name_d1']; ?>';
 var nameD2 = '<?php echo $_SESSION['name_d2']; ?>';
+var pokD1 = '<?php echo $_SESSION['NamePokemon_d1']; ?>';
+var pokD2 = '<?php echo $_SESSION['NamePokemon_d2']; ?>';
 
-var dresseur1 = document.getElementById('name_d1') ;
-var dresseur2 = document.getElementById('name_d2') ;
+var dresseur1 = document.getElementById('name_d1');
+var dresseur2 = document.getElementById('name_d2');
+var pokemon1 = document.getElementById('pok_d1');
+var pokemon2 = document.getElementById('pok_d2');
 
 dresseur1.innerHTML = nameD1;
 dresseur2.innerHTML = nameD2;
+pokemon1.innerHTML = pokD1;
+pokemon2.innerHTML = pokD2;
 </script>
 
 <script>
