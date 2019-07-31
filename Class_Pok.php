@@ -12,7 +12,7 @@ class Pokemon{
   public $xpPok=0;
 
 
-  public function __construct($namePok, $urlPok, $ptVieMax, $attaque1, $attaque2, $attaque3, $attaque4){
+  public function __construct($namePok, $urlPok, $ptVie, $ptVieMax, $attaque1, $attaque2, $attaque3, $attaque4){
 
    $this->namePok = $namePok;
    $this->urlPok = $namePok;
@@ -21,7 +21,8 @@ class Pokemon{
    $this->attaque2 = $attaque2;
    $this->attaque3 = $attaque3;
    $this->attaque4 = $attaque4;
-   $this->ptvie = $ptVieMax;
+   $this->ptvie = $ptVie;
+   
   }
 
   public function setptvie($ptVie)
@@ -32,6 +33,11 @@ class Pokemon{
   public function getptVie()
   {
     return $this->ptVie;
+  }
+
+  public function setptvieMax($ptVieMax)
+  {
+    $this->ptVieMax = $ptVieMax;
   }
 
   public function getptVieMax()

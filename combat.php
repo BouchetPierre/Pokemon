@@ -2,13 +2,14 @@
 <html>
 <head>
   <link rel="stylesheet" href="combat.css">
+  <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/waltograph" type="text/css"/>
+  <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/generale-station" type="text/css"/>
   <meta charset="UTF-8">
 
   <title>Arène Pokémon</title>
 </head>
 <body>
   <div class="background">
-
     <div id="bg1">
      <div id="bg2">
       <div id="bg3">
@@ -16,7 +17,6 @@
           <h1><img src="image/uranium.png" alt="titre" width="500px"
             height="200px"></h1>
         </div>
-
         <div class="hero">
           <!--Partie gauche dresseur 1-->
           <div class="dresseur_d1">
@@ -30,7 +30,7 @@
                 </form>
               </div>
               <div class="ptVie_d1">
-                <progress id="vie_d1" value="50" max="100"></progress>
+                <progress id="vie_d1" value="" max=""></progress>
               </div>
           </div>
 
@@ -56,7 +56,7 @@
               </div>
             <div class="ptVie_d2">
             <!--  <h3>Point de vie Pokemon 2</h3> -->
-                <progress id="vie_d2" value="50" max="100"></progress>
+                <progress id="vie_d2" value="" max=""></progress>
             </div>
           </div>
         </div>
@@ -67,33 +67,6 @@
   </div>
 </div>
 
-<script src="https://code.jquery.com/jquery-3.1.0.min.js" charset="utf-8"></script>
-<script type="text/javascript" src="script/submit.js" charset="utf-8"></script>
-
-      <script> // Script de la barre de vie à adapter ///
-
-          var PvProgress_d1 = document.getElementById("vie_d1");
-          var PvProgress_d2 = document.getElementById("vie_d2");// valeur max
-          var degats_d1;
-          var degats_d2;
-          function pertePv_d1() {
-              if(pvProgress_d1 >=0) {
-                  progress = pvProgress_d1 - degats_d1;
-                  return PvProgress_d1
-              }else{
-                  alert("Vous êtes mort ! ")
-              }
-          };
-          function pertePv_d2() {
-              if(pvProgress_d2 >=0) {
-                  progress = pvProgress_d2 - degats_d2;
-                  return PvProgress_d2
-              }else{
-                  alert("Vous êtes mort ! ")
-              }
-          };
-
-      </script>
 
 </body>
 </html>
