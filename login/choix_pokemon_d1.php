@@ -2,18 +2,16 @@
 <html lang="fr" dir="ltr">
 <head>
     <meta charset="utf-8">
-
+    <link rel="stylesheet" href="login.css">
     <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/gnu-unifont" type="text/css"/>
     <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/generale-station" type="text/css"/>
-    <link rel="stylesheet" href="login.css">
-    <title>Log In</title>
+
+    <title>LogIn</title>
 </head>
 <body>
     <div class="container">
         <h1>Choix du pokémon</h1>
-
         <?php
-
           try {
           $dresseur= new PDO('mysql:host=localhost;dbname=jeu_pokemon;charset=utf8', 'root', 'ADRAR1112', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
           }
