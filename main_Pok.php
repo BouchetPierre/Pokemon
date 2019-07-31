@@ -46,7 +46,7 @@ $pokemonDres_1 = new Pokemon($donneeD1['name'], $donneeD1['url_image_d2'], $donn
 
 /*------requete et construction Pokemon 2-------*/
 
-$_SESSION['pokemon_d2']=$_POST['pokemon_d2'];
+$_SESSION['pokemon_d2'];
 
 $affichage_d2= $dresseur->prepare('SELECT name, url_image_d1, pv, pv_max, fk_id_att1, fk_id_att2, fk_id_att3, fk_id_att4
                                   FROM pokemonDesk

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  localhost:3306
--- Généré le :  Mar 30 Juillet 2019 à 12:24
+-- Généré le :  Mer 31 Juillet 2019 à 11:36
 -- Version du serveur :  5.7.27-0ubuntu0.18.04.1
 -- Version de PHP :  7.2.19-0ubuntu0.18.04.1
 
@@ -50,11 +50,8 @@ CREATE TABLE `dresseur` (
 --
 
 INSERT INTO `dresseur` (`id_dresseur`, `name`, `mdp`) VALUES
-(11, 'noel', '123'),
-(12, 'Fetra', '456'),
-(13, 'jean', '123'),
-(14, 'pierre', '123'),
-(15, 'sacha', '789');
+(11, 'Noel', '1'),
+(16, 'Pierre', '1');
 
 -- --------------------------------------------------------
 
@@ -72,26 +69,27 @@ CREATE TABLE `pokemonDesk` (
   `fk_id_att1` int(11) NOT NULL,
   `fk_id_att2` int(11) NOT NULL,
   `fk_id_att3` int(11) NOT NULL,
-  `fk_id_att4` int(11) NOT NULL
+  `fk_id_att4` int(11) NOT NULL,
+  `pv_max` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Contenu de la table `pokemonDesk`
 --
 
-INSERT INTO `pokemonDesk` (`id_pokemon`, `name`, `url_image_d1`, `url_image_d2`, `evol`, `pv`, `fk_id_att1`, `fk_id_att2`, `fk_id_att3`, `fk_id_att4`) VALUES
-(1, 'bulbizarre', 'image/bulbizarre_d1.gif', 'image/bulbizarre_d2.gif', 1, 5, 1, 2, 3, 4),
-(2, 'herbizarre', 'image/herbizarre_d1.gif', 'image/herbizarre_d2.gif', 2, 47, 3, 4, 5, 6),
-(3, 'florizarre', 'image/florizarre_d1.gif', 'image/florizarre_d2.gif', 3, 82, 6, 7, 8, 9),
-(4, 'carapuce', 'image/carapuce_d1.gif', 'image/carapuce_d2.gif', 1, 7, 1, 10, 11, 12),
-(5, 'carabaffe', 'image/carabaffe_d1.gif', 'image/carabaffe_d2.gif', 2, 53, 11, 12, 13, 14),
-(6, 'tortank', 'image/tortank_d1.gif', 'image/tortank_d2.gif', 3, 99, 14, 15, 16, 17),
-(7, 'salameche', 'image/salameche_d1.gif', 'image/salameche_d2.gif', 1, 6, 18, 2, 19, 20),
-(8, 'reptincel', 'image/reptincel_d1.gif', 'image/reptincel_d2.gif', 2, 50, 19, 20, 21, 22),
-(9, 'dracaufeu', 'image/dracaufeu_d1.gif', 'image/dracaufeu_d2.gif', 3, 87, 22, 23, 24, 25),
-(10, 'fantominus', 'image/fantominus_d1.gif', 'image/fantominus_d2.gif', 1, 4, 26, 27, 28, 29),
-(11, 'spectrum', 'image/spectrum_d1.gif', 'image/spectrum_d2.gif', 2, 45, 28, 29, 30, 31),
-(12, 'ectoplasma', 'image/ectoplasma_d1.gif', 'image/ectoplasma_d2.gif', 3, 78, 31, 32, 33, 34);
+INSERT INTO `pokemonDesk` (`id_pokemon`, `name`, `url_image_d1`, `url_image_d2`, `evol`, `pv`, `fk_id_att1`, `fk_id_att2`, `fk_id_att3`, `fk_id_att4`, `pv_max`) VALUES
+(1, 'bulbizarre', 'image/bulbizarre_d1.gif', 'image/bulbizarre_d2.gif', 1, 5, 1, 2, 3, 4, 5),
+(2, 'herbizarre', 'image/herbizarre_d1.gif', 'image/herbizarre_d2.gif', 2, 47, 3, 4, 5, 6, 47),
+(3, 'florizarre', 'image/florizarre_d1.gif', 'image/florizarre_d2.gif', 3, 82, 6, 7, 8, 9, 82),
+(4, 'carapuce', 'image/carapuce_d1.gif', 'image/carapuce_d2.gif', 1, 7, 1, 10, 11, 12, 7),
+(5, 'carabaffe', 'image/carabaffe_d1.gif', 'image/carabaffe_d2.gif', 2, 53, 11, 12, 13, 14, 53),
+(6, 'tortank', 'image/tortank_d1.gif', 'image/tortank_d2.gif', 3, 99, 14, 15, 16, 17, 99),
+(7, 'salamèche', 'image/salameche_d1.gif', 'image/salameche_d2.gif', 1, 6, 18, 2, 19, 20, 6),
+(8, 'reptincel', 'image/reptincel_d1.gif', 'image/reptincel_d2.gif', 2, 50, 19, 20, 21, 22, 50),
+(9, 'dracaufeu', 'image/dracaufeu_d1.gif', 'image/dracaufeu_d2.gif', 3, 87, 22, 23, 24, 25, 87),
+(10, 'fantominus', 'image/fantominus_d1.gif', 'image/fantominus_d2.gif', 1, 4, 26, 27, 28, 29, 4),
+(11, 'spectrum', 'image/spectrum_d1.gif', 'image/spectrum_d2.gif', 2, 45, 28, 29, 30, 31, 45),
+(12, 'ectoplasma', 'image/ectoplasma_d1.gif', 'image/ectoplasma_d2.gif', 3, 78, 31, 32, 33, 34, 78);
 
 -- --------------------------------------------------------
 
@@ -115,37 +113,37 @@ INSERT INTO `typeAttaque` (`id_typeAttaque`, `name`, `degat`, `pp`, `genreAttaqu
 (1, 'charge', 1, 35, 1),
 (2, 'rugissement', 1, 40, 3),
 (3, 'vampigraine', 1, 10, 2),
-(4, 'fouet_lianes', 1, 25, 1),
-(5, 'poudre_toxik', 1, 15, 3),
-(6, 'belier', 1, 30, 1),
-(7, 'tranch_herbe', 1, 25, 1),
-(8, 'megasangsue', 1, 10, 2),
-(9, 'lance_soleil', 1, 5, 1),
+(4, 'fouets lianes', 1, 25, 1),
+(5, 'poudre toxik', 1, 15, 3),
+(6, 'bêlier', 1, 30, 1),
+(7, 'tranch herbe', 1, 25, 1),
+(8, 'mégasangsue', 1, 10, 2),
+(9, 'lance soleil', 1, 5, 1),
 (10, 'mimi_queue', 1, 40, 3),
-(11, 'pistolet_a_O', 1, 15, 1),
-(12, 'ecume', 1, 25, 1),
+(11, 'pistolet à O', 1, 15, 1),
+(12, 'écume', 1, 25, 1),
 (13, 'morsure', 1, 15, 1),
 (14, 'abri', 1, 15, 3),
 (15, 'coudkrane', 1, 30, 1),
-(16, 'bulle_dO', 1, 15, 1),
+(16, 'bulle dO', 1, 15, 1),
 (17, 'hydrocanon', 1, 5, 1),
 (18, 'griffe', 1, 35, 1),
-(19, 'flammeche', 1, 15, 1),
+(19, 'flammèche', 1, 15, 1),
 (20, 'tranche', 1, 20, 1),
-(21, 'lance_flamme', 1, 15, 1),
+(21, 'lance flamme', 1, 15, 1),
 (22, 'grimace', 1, 20, 3),
-(23, 'croc_feu', 1, 10, 1),
-(24, 'eclate_roc', 1, 15, 1),
-(25, 'deflagration', 1, 5, 1),
-(26, 'lechouille', 1, 35, 1),
-(27, 'onde_folie', 1, 30, 3),
-(28, 'ball_ombre', 1, 35, 1),
-(29, 'cauchemar', 1, 25, 1),
-(30, 'gaz_toxik', 1, 15, 3),
-(31, 'devoreve', 1, 15, 2),
+(23, 'croc feu', 1, 10, 1),
+(24, 'éclate roc', 1, 15, 1),
+(25, 'déflagration', 1, 5, 1),
+(26, 'lèchouille', 1, 35, 1),
+(27, 'onde folie', 1, 30, 3),
+(28, 'ball ombre', 1, 35, 1),
+(29, 'cauchemard', 1, 25, 1),
+(30, 'gaz toxik', 1, 15, 3),
+(31, 'dévorève', 1, 15, 2),
 (32, 'psyko', 1, 25, 1),
 (33, 'tourmente', 1, 10, 1),
-(34, 'rafale_psy', 1, 5, 1);
+(34, 'rafale psy', 1, 5, 1);
 
 -- --------------------------------------------------------
 
@@ -231,7 +229,7 @@ ALTER TABLE `action`
 -- AUTO_INCREMENT pour la table `dresseur`
 --
 ALTER TABLE `dresseur`
-  MODIFY `id_dresseur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_dresseur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 --
 -- AUTO_INCREMENT pour la table `pokemonDesk`
 --

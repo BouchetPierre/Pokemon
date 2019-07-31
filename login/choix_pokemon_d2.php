@@ -25,7 +25,7 @@
 
         $lsPok= $dresseur->query('SELECT name, url_image_d2 FROM pokemonDesk WHERE evol = "1" ORDER BY id_pokemon');
         ?>
-        <form method="post" action='../main_Pok.php'>
+        <form method="post" action='../main2_Pok.php'>
           <?php
             while ($listePok_d2 = $lsPok->fetch())
             {
