@@ -1,0 +1,14 @@
+.parallax-viewport {
+  margin:0;
+  padding:0;
+  -webkit-background-size: cover;
+  background-size: cover;
+  position:relative;
+  overflow:hidden;
+  /* width:1300px;*/
+  height:1100px;
+}
+.parallax-layer {
+  position:absolute;
+  width: auto;
+}
