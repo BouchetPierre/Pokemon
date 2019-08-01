@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  localhost:3306
--- Généré le :  Mer 31 Juillet 2019 à 11:36
+-- Généré le :  Jeu 01 Août 2019 à 16:13
 -- Version du serveur :  5.7.27-0ubuntu0.18.04.1
 -- Version de PHP :  7.2.19-0ubuntu0.18.04.1
 
@@ -19,19 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `jeu_pokemon`
 --
-
--- --------------------------------------------------------
-
---
--- Structure de la table `action`
---
-
-CREATE TABLE `action` (
-  `id_action` int(11) NOT NULL,
-  `pv` int(11) DEFAULT NULL,
-  `fk_id_dresseur` int(11) DEFAULT NULL,
-  `fk_id_pokemon` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -70,26 +57,39 @@ CREATE TABLE `pokemonDesk` (
   `fk_id_att2` int(11) NOT NULL,
   `fk_id_att3` int(11) NOT NULL,
   `fk_id_att4` int(11) NOT NULL,
-  `pv_max` int(11) DEFAULT NULL
+  `pv_max` int(11) DEFAULT NULL,
+  `evolution` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `evolution2` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Contenu de la table `pokemonDesk`
 --
 
-INSERT INTO `pokemonDesk` (`id_pokemon`, `name`, `url_image_d1`, `url_image_d2`, `evol`, `pv`, `fk_id_att1`, `fk_id_att2`, `fk_id_att3`, `fk_id_att4`, `pv_max`) VALUES
-(1, 'bulbizarre', 'image/bulbizarre_d1.gif', 'image/bulbizarre_d2.gif', 1, 5, 1, 2, 3, 4, 5),
-(2, 'herbizarre', 'image/herbizarre_d1.gif', 'image/herbizarre_d2.gif', 2, 47, 3, 4, 5, 6, 47),
-(3, 'florizarre', 'image/florizarre_d1.gif', 'image/florizarre_d2.gif', 3, 82, 6, 7, 8, 9, 82),
-(4, 'carapuce', 'image/carapuce_d1.gif', 'image/carapuce_d2.gif', 1, 7, 1, 10, 11, 12, 7),
-(5, 'carabaffe', 'image/carabaffe_d1.gif', 'image/carabaffe_d2.gif', 2, 53, 11, 12, 13, 14, 53),
-(6, 'tortank', 'image/tortank_d1.gif', 'image/tortank_d2.gif', 3, 99, 14, 15, 16, 17, 99),
-(7, 'salamèche', 'image/salameche_d1.gif', 'image/salameche_d2.gif', 1, 6, 18, 2, 19, 20, 6),
-(8, 'reptincel', 'image/reptincel_d1.gif', 'image/reptincel_d2.gif', 2, 50, 19, 20, 21, 22, 50),
-(9, 'dracaufeu', 'image/dracaufeu_d1.gif', 'image/dracaufeu_d2.gif', 3, 87, 22, 23, 24, 25, 87),
-(10, 'fantominus', 'image/fantominus_d1.gif', 'image/fantominus_d2.gif', 1, 4, 26, 27, 28, 29, 4),
-(11, 'spectrum', 'image/spectrum_d1.gif', 'image/spectrum_d2.gif', 2, 45, 28, 29, 30, 31, 45),
-(12, 'ectoplasma', 'image/ectoplasma_d1.gif', 'image/ectoplasma_d2.gif', 3, 78, 31, 32, 33, 34, 78);
+INSERT INTO `pokemonDesk` (`id_pokemon`, `name`, `url_image_d1`, `url_image_d2`, `evol`, `pv`, `fk_id_att1`, `fk_id_att2`, `fk_id_att3`, `fk_id_att4`, `pv_max`, `evolution`, `evolution2`) VALUES
+(1, 'bulbizarre', 'image/bulbizarre_d1.gif', 'image/bulbizarre_d2.gif', 1, 5, 1, 2, 3, 4, 5, 'herbizarre', 'florizarre'),
+(2, 'herbizarre', 'image/herbizarre_d1.gif', 'image/herbizarre_d2.gif', 2, 47, 3, 4, 5, 6, 47, NULL, NULL),
+(3, 'florizarre', 'image/florizarre_d1.gif', 'image/florizarre_d2.gif', 3, 82, 6, 7, 8, 9, 82, NULL, NULL),
+(4, 'carapuce', 'image/carapuce_d1.gif', 'image/carapuce_d2.gif', 1, 7, 1, 10, 11, 12, 7, 'carabaffe', 'tortank'),
+(5, 'carabaffe', 'image/carabaffe_d1.gif', 'image/carabaffe_d2.gif', 2, 53, 11, 12, 13, 14, 53, NULL, NULL),
+(6, 'tortank', 'image/tortank_d1.gif', 'image/tortank_d2.gif', 3, 99, 14, 15, 16, 17, 99, NULL, NULL),
+(7, 'salameche', 'image/salameche_d1.gif', 'image/salameche_d2.gif', 1, 6, 18, 2, 19, 20, 6, 'reptincel', 'dracaufeu'),
+(8, 'reptincel', 'image/reptincel_d1.gif', 'image/reptincel_d2.gif', 2, 50, 19, 20, 21, 22, 50, NULL, NULL),
+(9, 'dracaufeu', 'image/dracaufeu_d1.gif', 'image/dracaufeu_d2.gif', 3, 87, 22, 23, 24, 25, 87, NULL, NULL),
+(10, 'fantominus', 'image/fantominus_d1.gif', 'image/fantominus_d2.gif', 1, 4, 26, 27, 28, 29, 4, 'spectrum', 'ectoplasma'),
+(11, 'spectrum', 'image/spectrum_d1.gif', 'image/spectrum_d2.gif', 2, 45, 28, 29, 30, 31, 45, NULL, NULL),
+(12, 'ectoplasma', 'image/ectoplasma_d1.gif', 'image/ectoplasma_d2.gif', 3, 78, 31, 32, 33, 34, 78, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `sauvegarde`
+--
+
+CREATE TABLE `sauvegarde` (
+  `namePok` varchar(15) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `pv` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -112,38 +112,38 @@ CREATE TABLE `typeAttaque` (
 INSERT INTO `typeAttaque` (`id_typeAttaque`, `name`, `degat`, `pp`, `genreAttaque`) VALUES
 (1, 'charge', 1, 35, 1),
 (2, 'rugissement', 1, 40, 3),
-(3, 'vampigraine', 1, 10, 2),
+(3, 'vampigraine', 2, 10, 2),
 (4, 'fouets lianes', 1, 25, 1),
-(5, 'poudre toxik', 1, 15, 3),
-(6, 'bêlier', 1, 30, 1),
-(7, 'tranch herbe', 1, 25, 1),
-(8, 'mégasangsue', 1, 10, 2),
-(9, 'lance soleil', 1, 5, 1),
+(5, 'poudre toxik', 2, 15, 3),
+(6, 'bêlier', 3, 30, 1),
+(7, 'tranch herbe', 2, 25, 1),
+(8, 'mégasangsue', 5, 10, 2),
+(9, 'lance soleil', 4, 5, 1),
 (10, 'mimi_queue', 1, 40, 3),
-(11, 'pistolet à O', 1, 15, 1),
+(11, 'pistolet à O', 2, 15, 1),
 (12, 'écume', 1, 25, 1),
-(13, 'morsure', 1, 15, 1),
-(14, 'abri', 1, 15, 3),
-(15, 'coudkrane', 1, 30, 1),
-(16, 'bulle dO', 1, 15, 1),
-(17, 'hydrocanon', 1, 5, 1),
+(13, 'morsure', 3, 15, 1),
+(14, 'abri', 2, 15, 3),
+(15, 'coudkrane', 4, 30, 1),
+(16, 'bulle dO', 5, 15, 1),
+(17, 'hydrocanon', 4, 5, 1),
 (18, 'griffe', 1, 35, 1),
 (19, 'flammèche', 1, 15, 1),
-(20, 'tranche', 1, 20, 1),
+(20, 'tranche', 2, 20, 1),
 (21, 'lance flamme', 1, 15, 1),
-(22, 'grimace', 1, 20, 3),
-(23, 'croc feu', 1, 10, 1),
-(24, 'éclate roc', 1, 15, 1),
-(25, 'déflagration', 1, 5, 1),
-(26, 'lèchouille', 1, 35, 1),
+(22, 'grimace', 2, 20, 3),
+(23, 'croc feu', 3, 10, 1),
+(24, 'éclate roc', 2, 15, 1),
+(25, 'déflagration', 4, 5, 1),
+(26, 'lèchouille', 2, 35, 1),
 (27, 'onde folie', 1, 30, 3),
-(28, 'ball ombre', 1, 35, 1),
-(29, 'cauchemard', 1, 25, 1),
-(30, 'gaz toxik', 1, 15, 3),
-(31, 'dévorève', 1, 15, 2),
-(32, 'psyko', 1, 25, 1),
-(33, 'tourmente', 1, 10, 1),
-(34, 'rafale psy', 1, 5, 1);
+(28, 'ball ombre', 2, 35, 1),
+(29, 'cauchemard', 2, 25, 1),
+(30, 'gaz toxik', 3, 15, 3),
+(31, 'dévorève', 2, 15, 2),
+(32, 'psyko', 5, 25, 1),
+(33, 'tourmente', 4, 10, 1),
+(34, 'rafale psy', 5, 5, 1);
 
 -- --------------------------------------------------------
 
@@ -183,14 +183,6 @@ INSERT INTO `valeursPokemon` (`id_valeursPokemon`, `pv_max`, `xp`, `lvl`, `fk_id
 --
 
 --
--- Index pour la table `action`
---
-ALTER TABLE `action`
-  ADD PRIMARY KEY (`id_action`),
-  ADD KEY `fk_id_dresseur` (`fk_id_dresseur`),
-  ADD KEY `fk_id_pokemon` (`fk_id_pokemon`);
-
---
 -- Index pour la table `dresseur`
 --
 ALTER TABLE `dresseur`
@@ -221,15 +213,10 @@ ALTER TABLE `valeursPokemon`
 --
 
 --
--- AUTO_INCREMENT pour la table `action`
---
-ALTER TABLE `action`
-  MODIFY `id_action` int(11) NOT NULL AUTO_INCREMENT;
---
 -- AUTO_INCREMENT pour la table `dresseur`
 --
 ALTER TABLE `dresseur`
-  MODIFY `id_dresseur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id_dresseur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 --
 -- AUTO_INCREMENT pour la table `pokemonDesk`
 --
@@ -248,13 +235,6 @@ ALTER TABLE `valeursPokemon`
 --
 -- Contraintes pour les tables exportées
 --
-
---
--- Contraintes pour la table `action`
---
-ALTER TABLE `action`
-  ADD CONSTRAINT `action_ibfk_1` FOREIGN KEY (`fk_id_dresseur`) REFERENCES `dresseur` (`id_dresseur`),
-  ADD CONSTRAINT `action_ibfk_2` FOREIGN KEY (`fk_id_pokemon`) REFERENCES `pokemonDesk` (`id_pokemon`);
 
 --
 -- Contraintes pour la table `valeursPokemon`

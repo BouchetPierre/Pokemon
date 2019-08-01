@@ -126,15 +126,8 @@ margin-right: 10%;
 width:100%;
 
 }
-.pokemon_d1{
-  /* background-image: url(image/salameche_d2.gif); */
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 250px;
-  height: 200px;
-  margin-left: 5%;
- margin-top: 250px;
-}
+
+
 .carapuce_d1{
   background-image: url(image/carapuce_d2.gif);
   background-size: contain;
@@ -171,7 +164,78 @@ width:100%;
   margin-left: 5%;
   margin-top: 250px;
 }
-
+.herbizarre_d1{
+  background-image: url(image/herbizarre_d2.gif);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 250px;
+  height: 200px;
+  margin-left: 5%;
+  margin-top: 250px;
+}
+.florizarre_d1{
+  background-image: url(image/florizarre_d2.gif);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 250px;
+  height: 200px;
+  margin-left: 5%;
+  margin-top: 250px;
+}
+.carabaffe_d1{
+  background-image: url(image/carabaffe_d2.gif);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 250px;
+  height: 200px;
+  margin-left: 5%;
+  margin-top: 250px;
+}
+.tortank_d1{
+  background-image: url(image/tortank_d2.gif);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 250px;
+  height: 200px;
+  margin-left: 5%;
+  margin-top: 250px;
+}
+.reptincel_d1{
+  background-image: url(image/reptincel_d2.gif);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 250px;
+  height: 200px;
+  margin-left: 5%;
+  margin-top: 250px;
+}
+.dracaufeu_d1{
+  background-image: url(image/dracaufeu_d2.gif);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 250px;
+  height: 200px;
+  margin-left: 5%;
+  margin-top: 250px;
+}
+.spectrum_d1{
+  background-image: url(image/spectrum_d2.gif);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 250px;
+  height: 200px;
+  margin-left: 5%;
+  margin-top: 250px;
+}
+.ectoplasma_d1{
+  background-image: url(image/ectoplasma_d2.gif);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 250px;
+  height: 200px;
+  margin-left: 5%;
+  margin-top: 250px;
+}
 
 
 
@@ -181,14 +245,7 @@ width:100%;
 
 
 }
-.pokemon_d2{
-  /* background-image: url(image/carapuce_d1.gif); */
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 250px;
-  height: 200px;
-  margin-left: 5%;
-  margin-top: 250px;
+
 }
 .carapuce_d2{
   background-image: url(image/carapuce_d1.gif);
@@ -226,7 +283,78 @@ width:100%;
   margin-left: 5%;
  margin-top: 250px;
 }
-
+.herbizarre_d2{
+  background-image: url(image/herbizarre_d1.gif);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 250px;
+  height: 200px;
+  margin-left: 5%;
+  margin-top: 250px;
+}
+.florizarre_d2{
+  background-image: url(image/florizarre_d1.gif);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 250px;
+  height: 200px;
+  margin-left: 5%;
+  margin-top: 250px;
+}
+.carabaffe_d2{
+  background-image: url(image/carabaffe_d1.gif);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 250px;
+  height: 200px;
+  margin-left: 5%;
+  margin-top: 250px;
+}
+.tortank_d2{
+  background-image: url(image/tortank_d1.gif);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 250px;
+  height: 200px;
+  margin-left: 5%;
+  margin-top: 250px;
+}
+.reptincel_d2{
+  background-image: url(image/reptincel_d1.gif);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 250px;
+  height: 200px;
+  margin-left: 5%;
+  margin-top: 250px;
+}
+.dracaufeu_d2{
+  background-image: url(image/dracaufeu_d1.gif);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 250px;
+  height: 200px;
+  margin-left: 5%;
+  margin-top: 250px;
+}
+.spectrum_d2{
+  background-image: url(image/spectrum_d1.gif);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 250px;
+  height: 200px;
+  margin-left: 5%;
+  margin-top: 250px;
+}
+.ectoplasma_d2{
+  background-image: url(image/ectoplasma_d1.gif);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 250px;
+  height: 200px;
+  margin-left: 5%;
+  margin-top: 250px;
+}
 
 
 
