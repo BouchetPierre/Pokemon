@@ -200,7 +200,6 @@ $_SESSION['NamePokemon_d2evo2']=$NamePokemon_d2evo2;
 
 $pokemonDres_2evo2 = new Pokemon($donneeD2evo2['name'], $donneeD2evo2['url_image_d1'], $donneeD2evo2['pv'],$donneeD2evo2['pv_max'], $tabResNameD2evo2[0], $tabResNameD2evo2[1], $tabResNameD2evo2[2], $tabResNameD2evo2[3]);
 
-/*------requete et construction Pokemon 2-------*/
 /*------construction Dresseur------*/
 
 $dresseur_d1 = new Dresseur($_SESSION['name_d1']);
@@ -252,7 +251,6 @@ $attaque4_d2evo2 = new Attaque( $tabResNameD1evo2[3], $tabResDegatD2evo2[3], $ta
 <script>
 
 /*------nom des attaques pour chaque pokémon -------*/
-//<script type="text/javascript" src="script/nomAttaque.js" charset="utf-8">/script>
 
 document.getElementById("rejouer").style.display= "none";/*bouton rejouer*/
 
@@ -522,14 +520,16 @@ function mortD2(){
   joueur2.innerHTML = "Vous êtes mort !!!!";
   document.getElementById("rejouer").style.display= "block";
 }
+
 function perteVieGainD1(powerAtt1_d1){
   pvD2=pvD2-powerAtt1_d1;
   document.getElementById("vie_d2").value = pvD2;
-  if(pvD1<pvD1max){
-    pvD1=pvD1+powerAtt1_d1;
-    if (pvD1>pvD1max){
-      pvD1=pvD1max;
-    }
+  if(pvD1<(parseInt(pvD1max)-parseInt(powerAtt1_d1))){
+    pvD1=parseInt(pvD1)+parseInt(powerAtt1_d1);
+    document.getElementById("vie_d1").value = pvD1;
+  }else{
+    pvD1=pvD1max;
+    document.getElementById("vie_d1").value = pvD1;
   }
   joueur2.innerHTML ="";
   joueur="d2";
@@ -588,14 +588,16 @@ function mortD1(){
   joueur1.innerHTML = "Vous êtes mort !!!!";
   document.getElementById("rejouer").style.display= "block";
 }
+
 function perteVieGainD2(powerAtt1_d2){
   pvD1=pvD1-powerAtt1_d2;
   document.getElementById("vie_d1").value = pvD1;
-  if(pvD2<pvD2max){
-    pvD2=pvD2+powerAtt1_d2;
-    if (pvD2>pvD2max){
-      pvD2=pvD2max;
-    }
+  if(pvD2<(parseInt(pvD2max)-parseInt(powerAtt1_d2))){
+    pvD2=parseInt(pvD2)+parseInt(powerAtt1_d2);
+    document.getElementById("vie_d2").value = pvD2;
+  }else{
+    pvD2=pvD2max;
+    document.getElementById("vie_d2").value = pvD2;
   }
   joueur1.innerHTML ="";
   joueur="d1";
