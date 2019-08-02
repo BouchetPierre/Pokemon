@@ -34,6 +34,10 @@ class Pokemon{
   {
     return $this->ptVie;
   }
+  public function getnamePok()
+  {
+    return $this->namePok;
+  }
 
   public function setptvieMax($ptVieMax)
   {

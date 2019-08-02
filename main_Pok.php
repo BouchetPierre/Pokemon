@@ -494,6 +494,7 @@ function evol1D1(){
   };
   attD1evo1();
   typAttD1evo1();
+  pokemon1.innerHTML = nomD1Evo1;
 }
 function evol2D1(){
   switch (NamePokemonD1) {
@@ -513,12 +514,21 @@ function evol2D1(){
   };
   attD1evo2();
   typAttD1evo2();
+  pokemon1.innerHTML = nomD1Evo2;
 }
 function mortD2(){
   lvl_d1.innerHTML = lvlD1;
   document.getElementById("vie_d2").value = 0;
   joueur2.innerHTML = "Vous êtes mort !!!!";
   document.getElementById("rejouer").style.display= "block";
+  document.getElementById("att1_d1").style.display= "none";
+  document.getElementById("att2_d1").style.display= "none";
+  document.getElementById("att3_d1").style.display= "none";
+  document.getElementById("att4_d1").style.display= "none";
+  document.getElementById("att1_d2").style.display= "none";
+  document.getElementById("att2_d2").style.display= "none";
+  document.getElementById("att3_d2").style.display= "none";
+  document.getElementById("att4_d2").style.display= "none";
 }
 
 function perteVieGainD1(powerAtt1_d1){
@@ -562,6 +572,7 @@ function evol1D2(){
   };
   attD2evo1();
   typAttD2evo1();
+  pokemon1.innerHTML = nomD2Evo1;
 }
 function evol2D2(){
   switch (NamePokemonD2) {
@@ -581,12 +592,21 @@ function evol2D2(){
   };
   attD2evo2();
   typAttD2evo2();
+  pokemon1.innerHTML = nomD2Evo2;
 }
 function mortD1(){
   lvl_d2.innerHTML = lvlD2;
   document.getElementById("vie_d1").value = 0;
   joueur1.innerHTML = "Vous êtes mort !!!!";
   document.getElementById("rejouer").style.display= "block";
+  document.getElementById("att1_d1").style.display= "none";
+  document.getElementById("att2_d1").style.display= "none";
+  document.getElementById("att3_d1").style.display= "none";
+  document.getElementById("att4_d1").style.display= "none";
+  document.getElementById("att1_d2").style.display= "none";
+  document.getElementById("att2_d2").style.display= "none";
+  document.getElementById("att3_d2").style.display= "none";
+  document.getElementById("att4_d2").style.display= "none";
 }
 
 function perteVieGainD2(powerAtt1_d2){
@@ -854,6 +874,14 @@ function attaque4_d2(){
 
 function rejouer(){
   document.getElementById("rejouer").style.display= "none";
+  document.getElementById("att1_d1").style.display= "block";
+  document.getElementById("att2_d1").style.display= "block";
+  document.getElementById("att3_d1").style.display= "block";
+  document.getElementById("att4_d1").style.display= "block";
+  document.getElementById("att1_d2").style.display= "block";
+  document.getElementById("att2_d2").style.display= "block";
+  document.getElementById("att3_d2").style.display= "block";
+  document.getElementById("att4_d2").style.display= "block";
   pvD2= ptvD2;
   pvD1= ptvD1;
   document.getElementById("vie_d2").value = pvD2;
