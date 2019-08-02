@@ -254,11 +254,7 @@ $attaque4_d2evo2 = new Attaque( $tabResNameD1evo2[3], $tabResDegatD2evo2[3], $ta
 /*------nom des attaques pour chaque pokémon -------*/
 //<script type="text/javascript" src="script/nomAttaque.js" charset="utf-8">/script>
 
-
-
-document.getElementById("rejouer").style.display= "none";
-
-var NamePokemonD1 = '<?php echo $_SESSION['NamePokemon_d1']; ?>';
+document.getElementById("rejouer").style.display= "none";/*bouton rejouer*/
 
 var tabResName1D1 = '<?php echo $tabResNameD1[0]; ?>';
 var tabResName2D1 = '<?php echo $tabResNameD1[1]; ?>';
@@ -280,22 +276,59 @@ document.getElementById("att2_d2").value = tabResName2D2 ;
 document.getElementById("att3_d2").value = tabResName3D2 ;
 document.getElementById("att4_d2").value = tabResName4D2 ;
 
-/*------affichage du pokémon sélectionné-------*/
-//<script type="text/javascript" src="script/pokemonSelectionné.js" charset="utf-8">/script>
+function attD1evo1(){
+  tabResName1D1 = '<?php echo $tabResNameD1evo1[0]; ?>';
+  tabResName2D1 = '<?php echo $tabResNameD1evo1[1]; ?>';
+  tabResName3D1 = '<?php echo $tabResNameD1evo1[2]; ?>';
+  tabResName4D1 = '<?php echo $tabResNameD1evo1[3]; ?>';
+
+  document.getElementById("att1_d1").value = tabResName1D1 ;
+  document.getElementById("att2_d1").value = tabResName2D1 ;
+  document.getElementById("att3_d1").value = tabResName3D1 ;
+  document.getElementById("att4_d1").value = tabResName4D1 ;
+}
+function attD2evo1(){
+  tabResName1D2 = '<?php echo $tabResNameD2evo1[0]; ?>';
+  tabResName2D2 = '<?php echo $tabResNameD2evo1[1]; ?>';
+  tabResName3D2 = '<?php echo $tabResNameD2evo1[2]; ?>';
+  tabResName4D2 = '<?php echo $tabResNameD2evo1[3]; ?>';
+
+  document.getElementById("att1_d2").value = tabResName1D2 ;
+  document.getElementById("att2_d2").value = tabResName2D2 ;
+  document.getElementById("att3_d2").value = tabResName3D2 ;
+  document.getElementById("att4_d2").value = tabResName4D2 ;
+}
+function attD1evo2(){
+  tabResName1D1 = '<?php echo $tabResNameD1evo2[0]; ?>';
+  tabResName2D1 = '<?php echo $tabResNameD1evo2[1]; ?>';
+  tabResName3D1 = '<?php echo $tabResNameD1evo2[2]; ?>';
+  tabResName4D1 = '<?php echo $tabResNameD1evo2[3]; ?>';
+
+  document.getElementById("att1_d1").value = tabResName1D1 ;
+  document.getElementById("att2_d1").value = tabResName2D1 ;
+  document.getElementById("att3_d1").value = tabResName3D1 ;
+  document.getElementById("att4_d1").value = tabResName4D1 ;
+}
+function attD2evo2(){
+  tabResName1D2 = '<?php echo $tabResNameD2evo2[0]; ?>';
+  tabResName2D2 = '<?php echo $tabResNameD2evo2[1]; ?>';
+  tabResName3D2 = '<?php echo $tabResNameD2evo2[2]; ?>';
+  tabResName4D2 = '<?php echo $tabResNameD2evo2[3]; ?>';
+
+  document.getElementById("att1_d2").value = tabResName1D2 ;
+  document.getElementById("att2_d2").value = tabResName2D2 ;
+  document.getElementById("att3_d2").value = tabResName3D2 ;
+  document.getElementById("att4_d2").value = tabResName4D2 ;
+}
+
+/*------noms des evolutions-------*/
 var nomD1Evo1 ='<?php echo $donneeD1evo1['name'];?>';
 var nomD1Evo2 ='<?php echo $donneeD1evo2['name'];?>';
 var nomD2Evo1 ='<?php echo $donneeD2evo1['name'];?>';
 var nomD2Evo2 ='<?php echo $donneeD2evo2['name'];?>';
 
-console.log(nomD1Evo1);
-console.log(nomD1Evo2);
-console.log(nomD2Evo1);
-console.log(nomD2Evo2);
-
-
+/*------affichage des pokémons sélectionnés-------*/
 var NamePokemonD1 = '<?php echo $_SESSION['NamePokemon_d1']; ?>';
-console.log(NamePokemonD1);
-
 var Pok_d1 = document.getElementById("pokemon_d1");
 switch (NamePokemonD1) {
   case "carapuce":
@@ -314,8 +347,6 @@ switch (NamePokemonD1) {
 }
 
 var NamePokemonD2 = '<?php echo $_SESSION['NamePokemon_d2']; ?>';
-console.log(NamePokemonD2);
-
 var Pok_d2 = document.getElementById("pokemon_d2");
 switch (NamePokemonD2) {
   case "carapuce":
@@ -352,6 +383,7 @@ dresseur2.innerHTML = nameD2;
 pokemon1.innerHTML = pokD1;
 pokemon2.innerHTML = pokD2;
 
+/*------affichage des level des Pokemons-------*/
 var lvlD1 = '<?php echo $level_d1; ?>';
 var lvlD2 = '<?php echo $level_d2; ?>';
 var lvl_d1 = document.getElementById('lvl1');
@@ -392,114 +424,208 @@ var powerAtt3_d2 = '<?php echo  $attaque3_d2->getpowerAttaque(); ?>';
 var genreAtt4_d2 = '<?php echo  $attaque4_d2->getgenreAttaque(); ?>';
 var powerAtt4_d2 = '<?php echo  $attaque4_d2->getpowerAttaque(); ?>';
 
+function typAttD1evo1(){
+  genreAtt1_d1 = '<?php echo  $attaque1_d1evo1->getgenreAttaque(); ?>';
+  powerAtt1_d1 = '<?php echo  $attaque1_d1evo1->getpowerAttaque(); ?>';
+  genreAtt2_d1 = '<?php echo  $attaque2_d1evo1->getgenreAttaque(); ?>';
+  powerAtt2_d1 = '<?php echo  $attaque2_d1evo1->getpowerAttaque(); ?>';
+  genreAtt3_d1 = '<?php echo  $attaque3_d1evo1->getgenreAttaque(); ?>';
+  powerAtt3_d1 = '<?php echo  $attaque3_d1evo1->getpowerAttaque(); ?>';
+  genreAtt4_d1 = '<?php echo  $attaque4_d1evo1->getgenreAttaque(); ?>';
+  powerAtt4_d1 = '<?php echo  $attaque4_d1evo1->getpowerAttaque(); ?>';
+}
+function typAttD1evo2(){
+  genreAtt1_d1 = '<?php echo  $attaque1_d1evo2->getgenreAttaque(); ?>';
+  powerAtt1_d1 = '<?php echo  $attaque1_d1evo2->getpowerAttaque(); ?>';
+  genreAtt2_d1 = '<?php echo  $attaque2_d1evo2->getgenreAttaque(); ?>';
+  powerAtt2_d1 = '<?php echo  $attaque2_d1evo2->getpowerAttaque(); ?>';
+  genreAtt3_d1 = '<?php echo  $attaque3_d1evo2->getgenreAttaque(); ?>';
+  powerAtt3_d1 = '<?php echo  $attaque3_d1evo2->getpowerAttaque(); ?>';
+  genreAtt4_d1 = '<?php echo  $attaque4_d1evo2->getgenreAttaque(); ?>';
+  powerAtt4_d1 = '<?php echo  $attaque4_d1evo2->getpowerAttaque(); ?>';
+}
+function typAttD2evo1(){
+  genreAtt1_d2 = '<?php echo  $attaque1_d2evo1->getgenreAttaque(); ?>';
+  powerAtt1_d2 = '<?php echo  $attaque1_d2evo1->getpowerAttaque(); ?>';
+  genreAtt2_d2 = '<?php echo  $attaque2_d2evo1->getgenreAttaque(); ?>';
+  powerAtt2_d2 = '<?php echo  $attaque2_d2evo1->getpowerAttaque(); ?>';
+  genreAtt3_d2 = '<?php echo  $attaque3_d2evo1->getgenreAttaque(); ?>';
+  powerAtt3_d2 = '<?php echo  $attaque3_d2evo1->getpowerAttaque(); ?>';
+  genreAtt4_d2 = '<?php echo  $attaque4_d2evo1->getgenreAttaque(); ?>';
+  powerAtt4_d2 = '<?php echo  $attaque4_d2evo1->getpowerAttaque(); ?>';
+}
+function typAttD2evo2(){
+  genreAtt1_d2 = '<?php echo  $attaque1_d2evo2->getgenreAttaque(); ?>';
+  powerAtt1_d2 = '<?php echo  $attaque1_d2evo2->getpowerAttaque(); ?>';
+  genreAtt2_d2 = '<?php echo  $attaque2_d2evo2->getgenreAttaque(); ?>';
+  powerAtt2_d2 = '<?php echo  $attaque2_d2evo2->getpowerAttaque(); ?>';
+  genreAtt3_d2 = '<?php echo  $attaque3_d2evo2->getgenreAttaque(); ?>';
+  powerAtt3_d2 = '<?php echo  $attaque3_d2evo2->getpowerAttaque(); ?>';
+  genreAtt4_d2 = '<?php echo  $attaque4_d2evo2->getgenreAttaque(); ?>';
+  powerAtt4_d2 = '<?php echo  $attaque4_d2evo2->getpowerAttaque(); ?>';
+}
+
 
 var joueur="d1";
 var joueur2 = document.getElementById('Mess2');
 var joueur1 = document.getElementById('Mess1');
 
+/*----Fonction des attaques D1---------------*/
+function perteVie2(powerAtt1_d1){
+  pvD2=pvD2-powerAtt1_d1;
+  document.getElementById("vie_d2").value = pvD2;
+  joueur="d2";
+  joueur2.innerHTML ="";
+};
+
+function evol1D1(){
+  switch (NamePokemonD1) {
+    case "carapuce":
+      Pok_d1.classList.toggle("carabaffe_d1")
+      break;
+    case "bulbizarre":
+      Pok_d1.classList.toggle("herbizarre_d1")
+      break;
+    case "salameche":
+      Pok_d1.classList.toggle("reptincel_d1")
+      break;
+    case "fantominus":
+      Pok_d1.classList.toggle("spectrum_d1")
+      break;
+    default:
+  };
+  attD1evo1();
+  typAttD1evo1();
+}
+function evol2D1(){
+  switch (NamePokemonD1) {
+    case "carapuce":
+      Pok_d1.classList.toggle("tortank_d1")
+      break;
+    case "bulbizarre":
+      Pok_d1.classList.toggle("florizarre_d1")
+      break;
+    case "salameche":
+      Pok_d1.classList.toggle("dracaufeu_d1")
+      break;
+    case "fantominus":
+      Pok_d1.classList.toggle("ectoplasma_d1")
+      break;
+    default:
+  };
+  attD1evo2();
+  typAttD1evo2();
+}
+function mortD2(){
+  lvl_d1.innerHTML = lvlD1;
+  document.getElementById("vie_d2").value = 0;
+  joueur2.innerHTML = "Vous êtes mort !!!!";
+  document.getElementById("rejouer").style.display= "block";
+}
+function perteVieGainD1(powerAtt1_d1){
+  pvD2=pvD2-powerAtt1_d1;
+  document.getElementById("vie_d2").value = pvD2;
+  if(pvD1<pvD1max){
+    pvD1=pvD1+powerAtt1_d1;
+    if (pvD1>pvD1max){
+      pvD1=pvD1max;
+    }
+  }
+  joueur2.innerHTML ="";
+  joueur="d2";
+}
+
+/*----Fonction des attaques D2---------------*/
+
+function perteVie1(powerAtt1_d2){
+  pvD1=pvD1-powerAtt1_d2;
+  document.getElementById("vie_d1").value = pvD1;
+  joueur="d1";
+  joueur1.innerHTML ="";
+};
+
+function evol1D2(){
+  switch (NamePokemonD2) {
+    case "carapuce":
+      Pok_d2.classList.toggle("carabaffe_d2")
+      break;
+    case "bulbizarre":
+      Pok_d2.classList.toggle("herbizarre_d2")
+      break;
+    case "salameche":
+      Pok_d2.classList.toggle("reptincel_d2")
+      break;
+    case "fantominus":
+      Pok_d2.classList.toggle("spectrum_d2")
+      break;
+    default:
+  };
+  attD2evo1();
+  typAttD2evo1();
+}
+function evol2D2(){
+  switch (NamePokemonD2) {
+    case "carapuce":
+      Pok_d2.classList.toggle("tortank_d2")
+      break;
+    case "bulbizarre":
+      Pok_d2.classList.toggle("florizarre_d2")
+      break;
+    case "salameche":
+      Pok_d2.classList.toggle("dracaufeu_d2")
+      break;
+    case "fantominus":
+      Pok_d2.classList.toggle("ectoplasma_d2")
+      break;
+    default:
+  };
+  attD2evo2();
+  typAttD2evo2();
+}
+function mortD1(){
+  lvl_d2.innerHTML = lvlD2;
+  document.getElementById("vie_d1").value = 0;
+  joueur1.innerHTML = "Vous êtes mort !!!!";
+  document.getElementById("rejouer").style.display= "block";
+}
+function perteVieGainD2(powerAtt1_d2){
+  pvD1=pvD1-powerAtt1_d2;
+  document.getElementById("vie_d1").value = pvD1;
+  if(pvD2<pvD2max){
+    pvD2=pvD2+powerAtt1_d2;
+    if (pvD2>pvD2max){
+      pvD2=pvD2max;
+    }
+  }
+  joueur1.innerHTML ="";
+  joueur="d1";
+}
+
 // Attaque 1 D1 fonction JS
 function attaque1_d1(){
   if (joueur=="d1" && genreAtt1_d1 != 2){
     if(pvD2>powerAtt1_d1){
-      pvD2=pvD2-powerAtt1_d1;
-      document.getElementById("vie_d2").value = pvD2;
-      joueur="d2";
-      joueur2.innerHTML ="";
+      perteVie2(powerAtt1_d1);
     }else{
       lvlD1++;
-      if (lvlD1>2 && lvlD1<5) {
-
-        switch (NamePokemonD1) {
-          case "carapuce":
-            Pok_d1.classList.toggle("carabaffe_d1")
-            break;
-          case "bulbizarre":
-            Pok_d1.classList.toggle("herbizarre_d1")
-            break;
-          case "salameche":
-            Pok_d1.classList.toggle("reptincel_d1")
-            break;
-          case "fantominus":
-            Pok_d1.classList.toggle("spectrum_d1")
-            break;
-          default:
-        }
-      }else if(lvlD1>=5){
-
-        switch (NamePokemonD1) {
-          case "carapuce":
-            Pok_d1.classList.toggle("tortank_d1")
-            break;
-          case "bulbizarre":
-            Pok_d1.classList.toggle("florizarre_d1")
-            break;
-          case "salameche":
-            Pok_d1.classList.toggle("dracaufeu_d1")
-            break;
-          case "fantominus":
-            Pok_d1.classList.toggle("ectoplasma_d1")
-            break;
-          default:
-        }
+      if (lvlD1==3) {
+        evol1D1();
+      }else if(lvlD1==5){
+        evol2D1();
       }
-      lvl_d1.innerHTML = lvlD1;
-      document.getElementById("vie_d2").value = 0;
-      joueur2.innerHTML = "Vous êtes mort !!!!";
-      document.getElementById("rejouer").style.display= "block";
-      }
+      mortD2();
+    }
   }else if (joueur=="d1" && genreAtt1_d1 == 2) {
     if(pvD2>powerAtt1_d1){
-      pvD2=pvD2-powerAtt1_d1;
-      document.getElementById("vie_d2").value = pvD2;
-      if(pvD1<pvD1max){
-        pvD1=pvD1+powerAtt1_d1;
-        if (pvD1>pvD1max){
-          pvD1=pvD1max;
-        }
-      }
-      joueur2.innerHTML ="";
-      joueur="d2";
+      perteVieGainD1(powerAtt1_d1);
     }else{
       lvlD1++;
-      if (lvlD1>2 && lvlD1<5) {
-
-        switch (NamePokemonD1) {
-          case "carapuce":
-            Pok_d1.classList.toggle("carabaffe_d1")
-            break;
-          case "bulbizarre":
-            Pok_d1.classList.toggle("herbizarre_d1")
-            break;
-          case "salameche":
-            Pok_d1.classList.toggle("reptincel_d1")
-            break;
-          case "fantominus":
-            Pok_d1.classList.toggle("spectrum_d1")
-            break;
-          default:
-        }
-      }else if(lvlD1>=5){
-
-        switch (NamePokemonD1) {
-          case "carapuce":
-            Pok_d1.classList.toggle("tortank_d1")
-            break;
-          case "bulbizarre":
-            Pok_d1.classList.toggle("florizarre_d1")
-            break;
-          case "salameche":
-            Pok_d1.classList.toggle("dracaufeu_d1")
-            break;
-          case "fantominus":
-            Pok_d1.classList.toggle("ectoplasma_d1")
-            break;
-          default:
-        }
+      if (lvlD1==3) {
+          evol1D1();
+      }else if(lvlD1==5){
+          evol2D1();
       }
-      lvl_d1.innerHTML = lvlD1;
-      document.getElementById("vie_d2").value = 0;
-      joueur2.innerHTML = "Vous êtes mort !!!!";
-      document.getElementById("rejouer").style.display= "block";
+      mortD2();
     }
   }else {
     joueur2.innerHTML ="";
@@ -510,105 +636,27 @@ function attaque1_d1(){
 function attaque2_d1(){
   if (joueur=="d1" && genreAtt2_d1 != 2){
     if(pvD2>powerAtt2_d1){
-      pvD2=pvD2-powerAtt2_d1;
-      document.getElementById("vie_d2").value = pvD2;
-      joueur="d2";
-      joueur2.innerHTML ="";
+      perteVie2(powerAtt2_d1);
     }else{
       lvlD1++;
-      if (lvlD1>2 && lvlD1<5) {
-
-        switch (NamePokemonD1) {
-          case "carapuce":
-            Pok_d1.classList.toggle("carabaffe_d1")
-            break;
-          case "bulbizarre":
-            Pok_d1.classList.toggle("herbizarre_d1")
-            break;
-          case "salameche":
-            Pok_d1.classList.toggle("reptincel_d1")
-            break;
-          case "fantominus":
-            Pok_d1.classList.toggle("spectrum_d1")
-            break;
-          default:
-        }
-      }else if(lvlD1>=5){
-
-        switch (NamePokemonD1) {
-          case "carapuce":
-            Pok_d1.classList.toggle("tortank_d1")
-            break;
-          case "bulbizarre":
-            Pok_d1.classList.toggle("florizarre_d1")
-            break;
-          case "salameche":
-            Pok_d1.classList.toggle("dracaufeu_d1")
-            break;
-          case "fantominus":
-            Pok_d1.classList.toggle("ectoplasma_d1")
-            break;
-          default:
-        }
+      if (lvlD1==3) {
+          evol1D1();
+      }else if(lvlD1==5){
+          evol2D1();
       }
-      lvl_d1.innerHTML = lvlD1;
-      document.getElementById("vie_d2").value = 0;
-      joueur2.innerHTML = "Vous êtes mort !!!!";
-      document.getElementById("rejouer").style.display= "block";
+      mortD2();
     }
   }else if (joueur=="d1" && genreAtt2_d1 == 2) {
     if(pvD2>powerAtt2_d1){
-      pvD2=pvD2-powerAtt2_d1;
-      document.getElementById("vie_d2").value = pvD2;
-      if(pvD1<pvD1max){
-        pvD1=pvD1+powerAtt2_d1;
-        if (pvD1>pvD1max){
-          pvD1=pvD1max;
-        }
-      }
-      joueur2.innerHTML ="";
-      joueur="d2";
+      perteVieGainD1(powerAtt2_d1);
     }else{
       lvlD1++;
-      if (lvlD1>2 && lvlD1<5) {
-
-        switch (NamePokemonD1) {
-          case "carapuce":
-            Pok_d1.classList.toggle("carabaffe_d1")
-            break;
-          case "bulbizarre":
-            Pok_d1.classList.toggle("herbizarre_d1")
-            break;
-          case "salameche":
-            Pok_d1.classList.toggle("reptincel_d1")
-            break;
-          case "fantominus":
-            Pok_d1.classList.toggle("spectrum_d1")
-            break;
-          default:
-        }
-      }else if(lvlD1>=5){
-
-        switch (NamePokemonD1) {
-          case "carapuce":
-            Pok_d1.classList.toggle("tortank_d1")
-            break;
-          case "bulbizarre":
-            Pok_d1.classList.toggle("florizarre_d1")
-            break;
-          case "salameche":
-            Pok_d1.classList.toggle("dracaufeu_d1")
-            break;
-          case "fantominus":
-            Pok_d1.classList.toggle("ectoplasma_d1")
-            break;
-          default:
-        }
+      if (lvlD1==3) {
+          evol1D1();
+      }else if(lvlD1==5){
+          evol2D1();
       }
-      lvl_d1.innerHTML = lvlD1;
-      document.getElementById("vie_d2").value = 0;
-      joueur2.innerHTML = "Vous êtes mort !!!!";
-      document.getElementById("rejouer").style.display= "block";
+      mortD2();
     }
   }else {
     joueur2.innerHTML ="";
@@ -619,105 +667,27 @@ function attaque2_d1(){
 function attaque3_d1(){
   if (joueur=="d1" && genreAtt3_d1 != 2){
     if(pvD2>powerAtt3_d1){
-      pvD2=pvD2-powerAtt3_d1;
-      document.getElementById("vie_d2").value = pvD2;
-      joueur="d2";
-      joueur2.innerHTML ="";
+      perteVie2(powerAtt3_d1);
     }else{
       lvlD1++;
-      if (lvlD1>2 && lvlD1<5) {
-
-        switch (NamePokemonD1) {
-          case "carapuce":
-            Pok_d1.classList.toggle("carabaffe_d1")
-            break;
-          case "bulbizarre":
-            Pok_d1.classList.toggle("herbizarre_d1")
-            break;
-          case "salameche":
-            Pok_d1.classList.toggle("reptincel_d1")
-            break;
-          case "fantominus":
-            Pok_d1.classList.toggle("spectrum_d1")
-            break;
-          default:
-        }
-      }else if(lvlD1>=5){
-
-        switch (NamePokemonD1) {
-          case "carapuce":
-            Pok_d1.classList.toggle("tortank_d1")
-            break;
-          case "bulbizarre":
-            Pok_d1.classList.toggle("florizarre_d1")
-            break;
-          case "salameche":
-            Pok_d1.classList.toggle("dracaufeu_d1")
-            break;
-          case "fantominus":
-            Pok_d1.classList.toggle("ectoplasma_d1")
-            break;
-          default:
-        }
+      if (lvlD1==2) {
+        evol1D1();
+      }else if(lvlD1==5){
+        evol2D1();
       }
-      lvl_d1.innerHTML = lvlD1;
-      document.getElementById("vie_d2").value = 0;
-      joueur2.innerHTML = "Vous êtes mort !!!!";
-      document.getElementById("rejouer").style.display= "block";
+      mortD2();
     }
   }else if (joueur=="d1" && genreAtt3_d1 == 2) {
     if(pvD2>powerAtt3_d1){
-      pvD2=pvD2-powerAtt3_d1;
-      document.getElementById("vie_d2").value = pvD2;
-      if(pvD1<pvD1max){
-        pvD1=pvD1+powerAtt3_d1;
-        if (pvD1>pvD1max){
-          pvD1=pvD1max;
-        }
-      }
-      joueur2.innerHTML ="";
-      joueur="d2";
+      perteVieGainD1(powerAtt3_d1);
     }else{
       lvlD1++;
-      if (lvlD1>2 && lvlD1<5) {
-
-        switch (NamePokemonD1) {
-          case "carapuce":
-            Pok_d1.classList.toggle("carabaffe_d1")
-            break;
-          case "bulbizarre":
-            Pok_d1.classList.toggle("herbizarre_d1")
-            break;
-          case "salameche":
-            Pok_d1.classList.toggle("reptincel_d1")
-            break;
-          case "fantominus":
-            Pok_d1.classList.toggle("spectrum_d1")
-            break;
-          default:
-        }
-      }else if(lvlD1>=5){
-
-        switch (NamePokemonD1) {
-          case "carapuce":
-            Pok_d1.classList.toggle("tortank_d1")
-            break;
-          case "bulbizarre":
-            Pok_d1.classList.toggle("florizarre_d1")
-            break;
-          case "salameche":
-            Pok_d1.classList.toggle("dracaufeu_d1")
-            break;
-          case "fantominus":
-            Pok_d1.classList.toggle("ectoplasma_d1")
-            break;
-          default:
-        }
+      if (lvlD1==3) {
+          evol1D1();
+      }else if(lvlD1==5){
+          evol2D1();
       }
-      lvl_d1.innerHTML = lvlD1;
-      document.getElementById("vie_d2").value = 0;
-      joueur2.innerHTML = "Vous êtes mort !!!!";
-      document.getElementById("rejouer").style.display= "block";
+      mortD2();
     }
   }else {
     joueur2.innerHTML ="";
@@ -728,105 +698,27 @@ function attaque3_d1(){
 function attaque4_d1(){
   if (joueur=="d1" && genreAtt4_d1 != 2){
     if(pvD2>powerAtt4_d1){
-      pvD2=pvD2-powerAtt4_d1;
-      document.getElementById("vie_d2").value = pvD2;
-      joueur="d2";
-      joueur2.innerHTML ="";
+      perteVie2(powerAtt4_d1);
     }else{
       lvlD1++;
-      if (lvlD1>2 && lvlD1<5) {
-
-        switch (NamePokemonD1) {
-          case "carapuce":
-            Pok_d1.classList.toggle("carabaffe_d1")
-            break;
-          case "bulbizarre":
-            Pok_d1.classList.toggle("herbizarre_d1")
-            break;
-          case "salameche":
-            Pok_d1.classList.toggle("reptincel_d1")
-            break;
-          case "fantominus":
-            Pok_d1.classList.toggle("spectrum_d1")
-            break;
-          default:
-        }
-      }else if(lvlD1>=5){
-
-        switch (NamePokemonD1) {
-          case "carapuce":
-            Pok_d1.classList.toggle("tortank_d1")
-            break;
-          case "bulbizarre":
-            Pok_d1.classList.toggle("florizarre_d1")
-            break;
-          case "salameche":
-            Pok_d1.classList.toggle("dracaufeu_d1")
-            break;
-          case "fantominus":
-            Pok_d1.classList.toggle("ectoplasma_d1")
-            break;
-          default:
-        }
+      if (lvlD1==3) {
+        evol1D1();
+      }else if(lvlD1==5){
+        evol2D1();
       }
-      lvl_d1.innerHTML = lvlD1;
-      document.getElementById("vie_d2").value = 0;
-      joueur2.innerHTML = "Vous êtes mort !!!!";
-      document.getElementById("rejouer").style.display= "block";
+      mortD2();
     }
   }else if (joueur=="d1" && genreAtt4_d1 == 2) {
     if(pvD2>powerAtt4_d1){
-      pvD2=pvD2-powerAtt4_d1;
-      document.getElementById("vie_d2").value = pvD2;
-      if(pvD1<pvD1max){
-        pvD1=pvD1+powerAtt4_d1;
-        if (pvD1>pvD1max){
-          pvD1=pvD1max;
-        }
-      }
-      joueur2.innerHTML ="";
-      joueur="d2";
+      perteVieGainD1(powerAtt4_d1);
     }else{
       lvlD1++;
-      if (lvlD1>2 && lvlD1<5) {
-
-        switch (NamePokemonD1) {
-          case "carapuce":
-            Pok_d1.classList.toggle("carabaffe_d1")
-            break;
-          case "bulbizarre":
-            Pok_d1.classList.toggle("herbizarre_d1")
-            break;
-          case "salameche":
-            Pok_d1.classList.toggle("reptincel_d1")
-            break;
-          case "fantominus":
-            Pok_d1.classList.toggle("spectrum_d1")
-            break;
-          default:
-        }
-      }else if(lvlD1>=5){
-
-        switch (NamePokemonD1) {
-          case "carapuce":
-            Pok_d1.classList.toggle("tortank_d1")
-            break;
-          case "bulbizarre":
-            Pok_d1.classList.toggle("florizarre_d1")
-            break;
-          case "salameche":
-            Pok_d1.classList.toggle("dracaufeu_d1")
-            break;
-          case "fantominus":
-            Pok_d1.classList.toggle("ectoplasma_d1")
-            break;
-          default:
-        }
+      if (lvlD1==3) {
+          evol1D1();
+      }else if(lvlD1==5){
+          evol2D1();
       }
-      lvl_d1.innerHTML = lvlD1;
-      document.getElementById("vie_d2").value = 0;
-      joueur2.innerHTML = "Vous êtes mort !!!!";
-      document.getElementById("rejouer").style.display= "block";
+      mortD2();
     }
   }else {
     joueur2.innerHTML ="";
@@ -837,105 +729,27 @@ function attaque4_d1(){
 function attaque1_d2(){
   if (joueur=="d2" && genreAtt1_d2 != 2){
     if(pvD1>powerAtt1_d2){
-      pvD1=pvD1-powerAtt1_d2;
-      document.getElementById("vie_d1").value = pvD1;
-      joueur="d1";
-      joueur1.innerHTML ="";
+      perteVie1(powerAtt1_d2);
     }else{
       lvlD2++;
-      if (lvlD2>2 && lvlD2<5) {
-
-        switch (NamePokemonD2) {
-          case "carapuce":
-            Pok_d2.classList.toggle("carabaffe_d2")
-            break;
-          case "bulbizarre":
-            Pok_d2.classList.toggle("herbizarre_d2")
-            break;
-          case "salameche":
-            Pok_d2.classList.toggle("reptincel_d2")
-            break;
-          case "fantominus":
-            Pok_d2.classList.toggle("spectrum_d2")
-            break;
-          default:
-        }
-      }else if(lvlD2>=5){
-
-        switch (NamePokemonD2) {
-          case "carapuce":
-            Pok_d2.classList.toggle("tortank_d2")
-            break;
-          case "bulbizarre":
-            Pok_d2.classList.toggle("florizarre_d2")
-            break;
-          case "salameche":
-            Pok_d2.classList.toggle("dracaufeu_d2")
-            break;
-          case "fantominus":
-            Pok_d2.classList.toggle("ectoplasma_d2")
-            break;
-          default:
-        }
+      if (lvlD2==3) {
+        evol1D2();
+      }else if(lvlD2==5){
+        evol2D2();
       }
-      lvl_d2.innerHTML = lvlD2;
-      document.getElementById("vie_d1").value = 0;
-      joueur1.innerHTML = "Vous êtes mort !!!!";
-      document.getElementById("rejouer").style.display= "block";
+      mortD1();
     }
   }else if (joueur=="d2" && genreAtt1_d2 == 2) {
     if(pvD1>powerAtt1_d2){
-      pvD1=pvD1-powerAtt1_d2;
-      document.getElementById("vie_d1").value = pvD1;
-      if(pvD2<pvD2max){
-        pvD2=pvD2+powerAtt1_d2;
-        if (pvD2>pvD1max){
-          pvD2=pvD2max;
-        }
-      }
-      joueur1.innerHTML ="";
-      joueur="d1";
+      perteVieGainD2(powerAtt1_d2);
     }else{
       lvlD2++;
-      if (lvlD2>2 && lvlD2<5) {
-
-        switch (NamePokemonD2) {
-          case "carapuce":
-            Pok_d2.classList.toggle("carabaffe_d2")
-            break;
-          case "bulbizarre":
-            Pok_d2.classList.toggle("herbizarre_d2")
-            break;
-          case "salameche":
-            Pok_d2.classList.toggle("reptincel_d2")
-            break;
-          case "fantominus":
-            Pok_d2.classList.toggle("spectrum_d2")
-            break;
-          default:
-        }
-      }else if(lvlD2>=5){
-
-        switch (NamePokemonD2) {
-          case "carapuce":
-            Pok_d2.classList.toggle("tortank_d2")
-            break;
-          case "bulbizarre":
-            Pok_d2.classList.toggle("florizarre_d2")
-            break;
-          case "salameche":
-            Pok_d2.classList.toggle("dracaufeu_d2")
-            break;
-          case "fantominus":
-            Pok_d2.classList.toggle("ectoplasma_d2")
-            break;
-          default:
-        }
+      if (lvlD2==3) {
+        evol1D2();
+      }else if(lvlD2==5){
+        evol2D2();
       }
-      lvl_d2.innerHTML = lvlD2;
-      document.getElementById("vie_d1").value = 0;
-      joueur1.innerHTML = "Vous êtes mort !!!!";
-      document.getElementById("rejouer").style.display= "block";
+      mortD2();
     }
   }else {
     joueur1.innerHTML ="";
@@ -946,105 +760,27 @@ function attaque1_d2(){
 function attaque2_d2(){
   if (joueur=="d2" && genreAtt2_d2 != 2){
     if(pvD1>powerAtt2_d2){
-      pvD1=pvD1-powerAtt2_d2;
-      document.getElementById("vie_d1").value = pvD1;
-      joueur="d1";
-      joueur1.innerHTML ="";
+      perteVie1(powerAtt2_d2);
     }else{
       lvlD2++;
-      if (lvlD2>2 && lvlD2<5) {
-
-        switch (NamePokemonD2) {
-          case "carapuce":
-            Pok_d2.classList.toggle("carabaffe_d2")
-            break;
-          case "bulbizarre":
-            Pok_d2.classList.toggle("herbizarre_d2")
-            break;
-          case "salameche":
-            Pok_d2.classList.toggle("reptincel_d2")
-            break;
-          case "fantominus":
-            Pok_d2.classList.toggle("spectrum_d2")
-            break;
-          default:
-        }
-      }else if(lvlD2>=5){
-
-        switch (NamePokemonD2) {
-          case "carapuce":
-            Pok_d2.classList.toggle("tortank_d2")
-            break;
-          case "bulbizarre":
-            Pok_d2.classList.toggle("florizarre_d2")
-            break;
-          case "salameche":
-            Pok_d2.classList.toggle("dracaufeu_d2")
-            break;
-          case "fantominus":
-            Pok_d2.classList.toggle("ectoplasma_d2")
-            break;
-          default:
-        }
+      if (lvlD2==3) {
+        evol1D2();
+      }else if(lvlD2==5){
+        evol2D2();
       }
-      lvl_d2.innerHTML = lvlD2;
-      document.getElementById("vie_d1").value = 0;
-      joueur1.innerHTML = "Vous êtes mort !!!!";
-      document.getElementById("rejouer").style.display= "block";
+      mortD1();
     }
   }else if (joueur=="d2" && genreAtt2_d2 == 2) {
     if(pvD1>powerAtt2_d2){
-      pvD1=pvD1-powerAtt2_d2;
-      document.getElementById("vie_d1").value = pvD1;
-      if(pvD2<pvD2max){
-        pvD2=pvD2+powerAtt2_d2;
-        if (pvD2>pvD1max){
-          pvD2=pvD2max;
-        }
-      }
-      joueur1.innerHTML ="";
-      joueur="d1";
+      perteVieGainD2(powerAtt2_d2);
     }else{
       lvlD2++;
-      if (lvlD2>2 && lvlD2<5) {
-
-        switch (NamePokemonD2) {
-          case "carapuce":
-            Pok_d2.classList.toggle("carabaffe_d2")
-            break;
-          case "bulbizarre":
-            Pok_d2.classList.toggle("herbizarre_d2")
-            break;
-          case "salameche":
-            Pok_d2.classList.toggle("reptincel_d2")
-            break;
-          case "fantominus":
-            Pok_d2.classList.toggle("spectrum_d2")
-            break;
-          default:
-        }
-      }else if(lvlD2>=5){
-
-        switch (NamePokemonD2) {
-          case "carapuce":
-            Pok_d2.classList.toggle("tortank_d2")
-            break;
-          case "bulbizarre":
-            Pok_d2.classList.toggle("florizarre_d2")
-            break;
-          case "salameche":
-            Pok_d2.classList.toggle("dracaufeu_d2")
-            break;
-          case "fantominus":
-            Pok_d2.classList.toggle("ectoplasma_d2")
-            break;
-          default:
-        }
+      if (lvlD2==3) {
+        evol1D2();
+      }else if(lvlD2==5){
+        evol2D2();
       }
-      lvl_d2.innerHTML = lvlD2;
-      document.getElementById("vie_d1").value = 0;
-      joueur1.innerHTML = "Vous êtes mort !!!!";
-      document.getElementById("rejouer").style.display= "block";
+      mortD2();
     }
   }else {
     joueur1.innerHTML ="";
@@ -1055,105 +791,27 @@ function attaque2_d2(){
 function attaque3_d2(){
   if (joueur=="d2" && genreAtt3_d2 != 2){
     if(pvD1>powerAtt3_d2){
-      pvD1=pvD1-powerAtt3_d2;
-      document.getElementById("vie_d1").value = pvD1;
-      joueur="d1";
-      joueur1.innerHTML ="";
+      perteVie1(powerAtt3_d2);
     }else{
       lvlD2++;
-      if (lvlD2>2 && lvlD2<5) {
-
-        switch (NamePokemonD2) {
-          case "carapuce":
-            Pok_d2.classList.toggle("carabaffe_d2")
-            break;
-          case "bulbizarre":
-            Pok_d2.classList.toggle("herbizarre_d2")
-            break;
-          case "salameche":
-            Pok_d2.classList.toggle("reptincel_d2")
-            break;
-          case "fantominus":
-            Pok_d2.classList.toggle("spectrum_d2")
-            break;
-          default:
-        }
-      }else if(lvlD2>=5){
-
-        switch (NamePokemonD2) {
-          case "carapuce":
-            Pok_d2.classList.toggle("tortank_d2")
-            break;
-          case "bulbizarre":
-            Pok_d2.classList.toggle("florizarre_d2")
-            break;
-          case "salameche":
-            Pok_d2.classList.toggle("dracaufeu_d2")
-            break;
-          case "fantominus":
-            Pok_d2.classList.toggle("ectoplasma_d2")
-            break;
-          default:
-        }
+      if (lvlD2==3) {
+        evol1D2();
+      }else if(lvlD2==5){
+        evol2D2();
       }
-      lvl_d2.innerHTML = lvlD2;
-      document.getElementById("vie_d1").value = 0;
-      joueur1.innerHTML = "Vous êtes mort !!!!";
-      document.getElementById("rejouer").style.display= "block";
+      mortD1();
     }
   }else if (joueur=="d2" && genreAtt3_d2 == 2) {
     if(pvD1>powerAtt3_d2){
-      pvD1=pvD1-powerAtt3_d2;
-      document.getElementById("vie_d1").value = pvD1;
-      if(pvD2<pvD2max){
-        pvD2=pvD2+powerAtt3_d2;
-        if (pvD2>pvD1max){
-          pvD2=pvD2max;
-        }
-      }
-      joueur1.innerHTML ="";
-      joueur="d1";
+      perteVieGainD2(powerAtt3_d2);
     }else{
       lvlD2++;
-      if (lvlD2>2 && lvlD2<5) {
-
-        switch (NamePokemonD2) {
-          case "carapuce":
-            Pok_d2.classList.toggle("carabaffe_d2")
-            break;
-          case "bulbizarre":
-            Pok_d2.classList.toggle("herbizarre_d2")
-            break;
-          case "salameche":
-            Pok_d2.classList.toggle("reptincel_d2")
-            break;
-          case "fantominus":
-            Pok_d2.classList.toggle("spectrum_d2")
-            break;
-          default:
-        }
-      }else if(lvlD2>=5){
-
-        switch (NamePokemonD2) {
-          case "carapuce":
-            Pok_d2.classList.toggle("tortank_d2")
-            break;
-          case "bulbizarre":
-            Pok_d2.classList.toggle("florizarre_d2")
-            break;
-          case "salameche":
-            Pok_d2.classList.toggle("dracaufeu_d2")
-            break;
-          case "fantominus":
-            Pok_d2.classList.toggle("ectoplasma_d2")
-            break;
-          default:
-        }
+      if (lvlD2==3) {
+        evol1D2();
+      }else if(lvlD2==5){
+        evol2D2();
       }
-      lvl_d2.innerHTML = lvlD2;
-      document.getElementById("vie_d1").value = 0;
-      joueur1.innerHTML = "Vous êtes mort !!!!";
-      document.getElementById("rejouer").style.display= "block";
+      mortD2();
     }
   }else {
     joueur1.innerHTML ="";
@@ -1164,111 +822,34 @@ function attaque3_d2(){
 function attaque4_d2(){
   if (joueur=="d2" && genreAtt4_d2 != 2){
     if(pvD1>powerAtt4_d2){
-      pvD1=pvD1-powerAtt4_d2;
-      document.getElementById("vie_d1").value = pvD1;
-      joueur="d1";
-      joueur1.innerHTML ="";
+      perteVie1(powerAtt4_d2);
     }else{
       lvlD2++;
-      if (lvlD2>2 && lvlD2<5) {
-
-        switch (NamePokemonD2) {
-          case "carapuce":
-            Pok_d2.classList.toggle("carabaffe_d2")
-            break;
-          case "bulbizarre":
-            Pok_d2.classList.toggle("herbizarre_d2")
-            break;
-          case "salameche":
-            Pok_d2.classList.toggle("reptincel_d2")
-            break;
-          case "fantominus":
-            Pok_d2.classList.toggle("spectrum_d2")
-            break;
-          default:
-        }
-      }else if(lvlD2>=5){
-
-        switch (NamePokemonD2) {
-          case "carapuce":
-            Pok_d2.classList.toggle("tortank_d2")
-            break;
-          case "bulbizarre":
-            Pok_d2.classList.toggle("florizarre_d2")
-            break;
-          case "salameche":
-            Pok_d2.classList.toggle("dracaufeu_d2")
-            break;
-          case "fantominus":
-            Pok_d2.classList.toggle("ectoplasma_d2")
-            break;
-          default:
-        }
+      if (lvlD2==3) {
+        evol1D2();
+      }else if(lvlD2==5){
+        evol2D2();
       }
-      lvl_d2.innerHTML = lvlD2;
-      document.getElementById("vie_d1").value = 0;
-      joueur1.innerHTML = "Vous êtes mort !!!!";
-      document.getElementById("rejouer").style.display= "block";
+      mortD1();
     }
   }else if (joueur=="d2" && genreAtt4_d2 == 2) {
     if(pvD1>powerAtt4_d2){
-      pvD1=pvD1-powerAtt4_d2;
-      document.getElementById("vie_d1").value = pvD1;
-      if(pvD2<pvD2max){
-        pvD2=pvD2+powerAtt4_d2;
-        if (pvD2>pvD1max){
-          pvD2=pvD2max;
-        }
-      }
-      joueur1.innerHTML ="";
-      joueur="d1";
+      perteVieGainD2(powerAtt4_d2);
     }else{
       lvlD2++;
-      if (lvlD2>2 && lvlD2<5) {
-
-        switch (NamePokemonD2) {
-          case "carapuce":
-            Pok_d2.classList.toggle("carabaffe_d2")
-            break;
-          case "bulbizarre":
-            Pok_d2.classList.toggle("herbizarre_d2")
-            break;
-          case "salameche":
-            Pok_d2.classList.toggle("reptincel_d2")
-            break;
-          case "fantominus":
-            Pok_d2.classList.toggle("spectrum_d2")
-            break;
-          default:
-        }
-      }else if(lvlD2>=5){
-
-        switch (NamePokemonD2) {
-          case "carapuce":
-            Pok_d2.classList.toggle("tortank_d2")
-            break;
-          case "bulbizarre":
-            Pok_d2.classList.toggle("florizarre_d2")
-            break;
-          case "salameche":
-            Pok_d2.classList.toggle("dracaufeu_d2")
-            break;
-          case "fantominus":
-            Pok_d2.classList.toggle("ectoplasma_d2")
-            break;
-          default:
-        }
+      if (lvlD2==3) {
+        evol1D2();
+      }else if(lvlD2==5){
+        evol2D2();
       }
-      lvl_d2.innerHTML = lvlD2;
-      document.getElementById("vie_d1").value = 0;
-      joueur1.innerHTML = "Vous êtes mort !!!!";
-      document.getElementById("rejouer").style.display= "block";
+      mortD2();
     }
   }else {
     joueur1.innerHTML ="";
     joueur2.innerHTML = "Ce n'est pas à vous de jouer !!!!";
   }
 }
+
 function rejouer(){
   document.getElementById("rejouer").style.display= "none";
   pvD2= ptvD2;
